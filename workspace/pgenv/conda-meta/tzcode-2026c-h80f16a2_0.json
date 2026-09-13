@@ -1,0 +1,68 @@
+{
+    "arch": "aarch64",
+    "build": "h80f16a2_0",
+    "build_number": 0,
+    "build_string": "h80f16a2_0",
+    "channel": "conda-forge",
+    "constrains": [],
+    "depends": [
+        "libgcc >=14"
+    ],
+    "extracted_package_dir": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/tzcode-2026c-h80f16a2_0",
+    "files": [
+        "bin/tzselect",
+        "bin/zdump",
+        "bin/zic",
+        "lib/libtz.a"
+    ],
+    "fn": "tzcode-2026c-h80f16a2_0.conda",
+    "license": "BSD-3-Clause",
+    "link": {
+        "source": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/tzcode-2026c-h80f16a2_0",
+        "type": 1
+    },
+    "md5": "d7d87bb8c53bc31ef3a34ec0e8ccf7f1",
+    "name": "tzcode",
+    "package_tarball_full_path": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/tzcode-2026c-h80f16a2_0.tar.bz2",
+    "paths_data": {
+        "paths": [
+            {
+                "_path": "bin/tzselect",
+                "path_type": "hardlink",
+                "sha256": "30d660ce7abf6841294b68e2d3f6ff565368b485eceb4c57926475e55523350c",
+                "sha256_in_prefix": "30d660ce7abf6841294b68e2d3f6ff565368b485eceb4c57926475e55523350c",
+                "size_in_bytes": 21908
+            },
+            {
+                "_path": "bin/zdump",
+                "path_type": "hardlink",
+                "sha256": "1230d0454c37e155575fe95ddf46c42eb07aca5765ee9d008c5db25a58f314d4",
+                "sha256_in_prefix": "1230d0454c37e155575fe95ddf46c42eb07aca5765ee9d008c5db25a58f314d4",
+                "size_in_bytes": 75168
+            },
+            {
+                "_path": "bin/zic",
+                "path_type": "hardlink",
+                "sha256": "932253155b5464ae14d4f87392136aa1a8f1d691cf40617056011341d84a86d4",
+                "sha256_in_prefix": "932253155b5464ae14d4f87392136aa1a8f1d691cf40617056011341d84a86d4",
+                "size_in_bytes": 77936
+            },
+            {
+                "_path": "lib/libtz.a",
+                "path_type": "hardlink",
+                "sha256": "7391818404b1cca79a6e2b440e1c60c53f5840e6999b2a9e17f26c0234a53795",
+                "sha256_in_prefix": "7391818404b1cca79a6e2b440e1c60c53f5840e6999b2a9e17f26c0234a53795",
+                "size_in_bytes": 45588
+            }
+        ],
+        "paths_version": 1
+    },
+    "platform": "linux",
+    "requested_spec": "",
+    "sha256": "fcef14bea0f429876f814f8c33344a190fd2f108fecf6e4f6a57fda4617f1bb1",
+    "size": 73648,
+    "subdir": "linux-aarch64",
+    "timestamp": 1783787984,
+    "url": "https://conda.anaconda.org/conda-forge/linux-aarch64/tzcode-2026c-h80f16a2_0.conda",
+    "version": "2026c"
+}

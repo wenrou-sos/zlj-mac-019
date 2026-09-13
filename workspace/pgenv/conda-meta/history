@@ -1,0 +1,34 @@
+==> 2026-09-13 01:37:58 <==
+# cmd: /tmp/bin/micromamba create -y -q -p /workspace/pgenv -c conda-forge postgresql
+# conda version: 3.8.0
++https://conda.anaconda.org/conda-forge/noarch::ca-certificates-2026.7.22-hbd8a1cb_0
++https://conda.anaconda.org/conda-forge/noarch::tzdata-2026c-h151e31d_0
++https://conda.anaconda.org/conda-forge/linux-aarch64::libgomp-16.2.0-h8acb6b2_4
++https://conda.anaconda.org/conda-forge/linux-aarch64::libzlib-1.3.2-hdc9db2a_3
++https://conda.anaconda.org/conda-forge/linux-aarch64::_openmp_mutex-4.5-20_gnu
++https://conda.anaconda.org/conda-forge/linux-aarch64::zstd-1.5.7-h9d15635_7
++https://conda.anaconda.org/conda-forge/linux-aarch64::libgcc-16.2.0-h205dda4_4
++https://conda.anaconda.org/conda-forge/linux-aarch64::libiconv-1.18-h1ea5142_3
++https://conda.anaconda.org/conda-forge/linux-aarch64::liblzma-5.8.3-he30d5cf_1
++https://conda.anaconda.org/conda-forge/linux-aarch64::libgcc-ng-16.2.0-he9431aa_4
++https://conda.anaconda.org/conda-forge/linux-aarch64::ncurses-6.6-h2b6f883_1
++https://conda.anaconda.org/conda-forge/linux-aarch64::libxcrypt-4.4.38-h80f16a2_0
++https://conda.anaconda.org/conda-forge/linux-aarch64::keyutils-1.6.3-h5bc82ec_1
++https://conda.anaconda.org/conda-forge/linux-aarch64::tzcode-2026c-h80f16a2_0
++https://conda.anaconda.org/conda-forge/linux-aarch64::openssl-3.6.4-he6ad1d5_0
++https://conda.anaconda.org/conda-forge/linux-aarch64::libstdcxx-16.2.0-hef695bb_4
++https://conda.anaconda.org/conda-forge/linux-aarch64::libntlm-1.4-hf897c2e_1002
++https://conda.anaconda.org/conda-forge/linux-aarch64::libedit-3.1.20250104-pl5321hc48eb74_1
++https://conda.anaconda.org/conda-forge/linux-aarch64::readline-8.3-ha7194a6_1
++https://conda.anaconda.org/conda-forge/linux-aarch64::icu-78.3-py311h3512406_2
++https://conda.anaconda.org/conda-forge/linux-aarch64::lz4-c-1.10.0-hfb11796_2
++https://conda.anaconda.org/conda-forge/linux-aarch64::liburing-2.14-hfefdfc9_0
++https://conda.anaconda.org/conda-forge/linux-aarch64::krb5-1.22.2-h095d8e5_2
++https://conda.anaconda.org/conda-forge/linux-aarch64::libxml2-16-2.15.4-h2e5089f_0
++https://conda.anaconda.org/conda-forge/linux-aarch64::cyrus-sasl-2.1.28-h6598af7_1
++https://conda.anaconda.org/conda-forge/linux-aarch64::libxml2-2.15.4-h92b9305_0
++https://conda.anaconda.org/conda-forge/linux-aarch64::openldap-2.6.13-h2fb54aa_0
++https://conda.anaconda.org/conda-forge/linux-aarch64::libxslt-1.1.45-h22b76d0_1
++https://conda.anaconda.org/conda-forge/linux-aarch64::libpq-18.6-hd2a0605_1
++https://conda.anaconda.org/conda-forge/linux-aarch64::postgresql-18.6-hea4047d_1
+# update specs: ["postgresql"]

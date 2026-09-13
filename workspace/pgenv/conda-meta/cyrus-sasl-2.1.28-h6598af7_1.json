@@ -1,0 +1,645 @@
+{
+    "arch": "aarch64",
+    "build": "h6598af7_1",
+    "build_number": 1,
+    "build_string": "h6598af7_1",
+    "channel": "conda-forge",
+    "constrains": [],
+    "depends": [
+        "krb5 >=1.22.2,<1.23.0a0",
+        "libgcc >=13",
+        "libntlm",
+        "libstdcxx >=13",
+        "libxcrypt >=4.4.36",
+        "openssl >=3.5.5,<4.0a0"
+    ],
+    "extracted_package_dir": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/cyrus-sasl-2.1.28-h6598af7_1",
+    "files": [
+        "include/sasl/hmac-md5.h",
+        "include/sasl/md5.h",
+        "include/sasl/md5global.h",
+        "include/sasl/prop.h",
+        "include/sasl/sasl.h",
+        "include/sasl/saslplug.h",
+        "include/sasl/saslutil.h",
+        "lib/libsasl2.so",
+        "lib/libsasl2.so.3",
+        "lib/libsasl2.so.3.0.0",
+        "lib/pkgconfig/libsasl2.pc",
+        "lib/sasl2/libanonymous.so",
+        "lib/sasl2/libanonymous.so.3",
+        "lib/sasl2/libanonymous.so.3.0.0",
+        "lib/sasl2/libcrammd5.so",
+        "lib/sasl2/libcrammd5.so.3",
+        "lib/sasl2/libcrammd5.so.3.0.0",
+        "lib/sasl2/libdigestmd5.so",
+        "lib/sasl2/libdigestmd5.so.3",
+        "lib/sasl2/libdigestmd5.so.3.0.0",
+        "lib/sasl2/libgs2.so",
+        "lib/sasl2/libgs2.so.3",
+        "lib/sasl2/libgs2.so.3.0.0",
+        "lib/sasl2/libgssapiv2.so",
+        "lib/sasl2/libgssapiv2.so.3",
+        "lib/sasl2/libgssapiv2.so.3.0.0",
+        "lib/sasl2/libotp.so",
+        "lib/sasl2/libotp.so.3",
+        "lib/sasl2/libotp.so.3.0.0",
+        "lib/sasl2/libplain.so",
+        "lib/sasl2/libplain.so.3",
+        "lib/sasl2/libplain.so.3.0.0",
+        "lib/sasl2/libscram.so",
+        "lib/sasl2/libscram.so.3",
+        "lib/sasl2/libscram.so.3.0.0",
+        "sbin/pluginviewer",
+        "sbin/saslauthd",
+        "sbin/testsaslauthd",
+        "share/man/man3/sasl.3",
+        "share/man/man3/sasl_authorize_t.3",
+        "share/man/man3/sasl_auxprop.3",
+        "share/man/man3/sasl_auxprop_getctx.3",
+        "share/man/man3/sasl_auxprop_request.3",
+        "share/man/man3/sasl_callbacks.3",
+        "share/man/man3/sasl_canon_user_t.3",
+        "share/man/man3/sasl_chalprompt_t.3",
+        "share/man/man3/sasl_checkapop.3",
+        "share/man/man3/sasl_checkpass.3",
+        "share/man/man3/sasl_client_init.3",
+        "share/man/man3/sasl_client_new.3",
+        "share/man/man3/sasl_client_start.3",
+        "share/man/man3/sasl_client_step.3",
+        "share/man/man3/sasl_decode.3",
+        "share/man/man3/sasl_dispose.3",
+        "share/man/man3/sasl_done.3",
+        "share/man/man3/sasl_encode.3",
+        "share/man/man3/sasl_encodev.3",
+        "share/man/man3/sasl_errdetail.3",
+        "share/man/man3/sasl_errors.3",
+        "share/man/man3/sasl_errstring.3",
+        "share/man/man3/sasl_getconfpath_t.3",
+        "share/man/man3/sasl_getopt_t.3",
+        "share/man/man3/sasl_getpath_t.3",
+        "share/man/man3/sasl_getprop.3",
+        "share/man/man3/sasl_getrealm_t.3",
+        "share/man/man3/sasl_getsecret_t.3",
+        "share/man/man3/sasl_getsimple_t.3",
+        "share/man/man3/sasl_global_listmech.3",
+        "share/man/man3/sasl_idle.3",
+        "share/man/man3/sasl_listmech.3",
+        "share/man/man3/sasl_log_t.3",
+        "share/man/man3/sasl_server_init.3",
+        "share/man/man3/sasl_server_new.3",
+        "share/man/man3/sasl_server_start.3",
+        "share/man/man3/sasl_server_step.3",
+        "share/man/man3/sasl_server_userdb_checkpass_t.3",
+        "share/man/man3/sasl_server_userdb_setpass_t.3",
+        "share/man/man3/sasl_setpass.3",
+        "share/man/man3/sasl_setprop.3",
+        "share/man/man3/sasl_user_exists.3",
+        "share/man/man3/sasl_verifyfile_t.3",
+        "share/man/man8/saslauthd.8",
+        "share/man/man8/testsaslauthd.8"
+    ],
+    "fn": "cyrus-sasl-2.1.28-h6598af7_1.conda",
+    "license": "BSD-3-Clause-Attribution",
+    "license_family": "BSD",
+    "link": {
+        "source": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/cyrus-sasl-2.1.28-h6598af7_1",
+        "type": 1
+    },
+    "md5": "f4fbf4001970e3e58984281a12c99969",
+    "name": "cyrus-sasl",
+    "package_tarball_full_path": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/cyrus-sasl-2.1.28-h6598af7_1.tar.bz2",
+    "paths_data": {
+        "paths": [
+            {
+                "_path": "include/sasl/hmac-md5.h",
+                "path_type": "hardlink",
+                "sha256": "3b47d9113db4f6a51ba59db6afdabd1bda18cd902c2f088e9d40f16fd3f348d2",
+                "sha256_in_prefix": "3b47d9113db4f6a51ba59db6afdabd1bda18cd902c2f088e9d40f16fd3f348d2",
+                "size_in_bytes": 1368
+            },
+            {
+                "_path": "include/sasl/md5.h",
+                "path_type": "hardlink",
+                "sha256": "a5121bdca8107962c2164a89063cb39203a523a8acb0d979a47654cefa56a88a",
+                "sha256_in_prefix": "a5121bdca8107962c2164a89063cb39203a523a8acb0d979a47654cefa56a88a",
+                "size_in_bytes": 1401
+            },
+            {
+                "_path": "include/sasl/md5global.h",
+                "path_type": "hardlink",
+                "sha256": "3cc424db99ce0f13bec132ce7d2f2da3d667837a673b1cd6614f8626845c56be",
+                "sha256_in_prefix": "3cc424db99ce0f13bec132ce7d2f2da3d667837a673b1cd6614f8626845c56be",
+                "size_in_bytes": 1026
+            },
+            {
+                "_path": "include/sasl/prop.h",
+                "path_type": "hardlink",
+                "sha256": "659f5f188541b715cd28fd3d018d20e4585987e5a634e1c71a57a47b606a36c5",
+                "sha256_in_prefix": "659f5f188541b715cd28fd3d018d20e4585987e5a634e1c71a57a47b606a36c5",
+                "size_in_bytes": 7211
+            },
+            {
+                "_path": "include/sasl/sasl.h",
+                "path_type": "hardlink",
+                "sha256": "74305a644c54bfab2a06575ebe46c7c3ace3dc0ef2c2855a575d17a387615ee6",
+                "sha256_in_prefix": "74305a644c54bfab2a06575ebe46c7c3ace3dc0ef2c2855a575d17a387615ee6",
+                "size_in_bytes": 52386
+            },
+            {
+                "_path": "include/sasl/saslplug.h",
+                "path_type": "hardlink",
+                "sha256": "fe4d8a20940b257f6353ecf8c533f45e0fdd0554b3798758bcbab564066a84c4",
+                "sha256_in_prefix": "fe4d8a20940b257f6353ecf8c533f45e0fdd0554b3798758bcbab564066a84c4",
+                "size_in_bytes": 34678
+            },
+            {
+                "_path": "include/sasl/saslutil.h",
+                "path_type": "hardlink",
+                "sha256": "d0310f0697ec33b711c647ac4b59fc40b130d9b2381180ed95de3749e30db09a",
+                "sha256_in_prefix": "d0310f0697ec33b711c647ac4b59fc40b130d9b2381180ed95de3749e30db09a",
+                "size_in_bytes": 2825
+            },
+            {
+                "_path": "lib/libsasl2.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "86052c56e7d61d48d4d4d6126aa85cc64f870ffe932134f2649f418cc22329a2",
+                "size_in_bytes": 149888
+            },
+            {
+                "_path": "lib/libsasl2.so.3",
+                "path_type": "softlink",
+                "sha256_in_prefix": "86052c56e7d61d48d4d4d6126aa85cc64f870ffe932134f2649f418cc22329a2",
+                "size_in_bytes": 149888
+            },
+            {
+                "_path": "lib/libsasl2.so.3.0.0",
+                "path_type": "hardlink",
+                "sha256": "4ad4cd941356d2885e69b813f8d9f5f9638409fb65b6e93d23b786f57f9ea3e5",
+                "sha256_in_prefix": "86052c56e7d61d48d4d4d6126aa85cc64f870ffe932134f2649f418cc22329a2",
+                "size_in_bytes": 149888
+            },
+            {
+                "_path": "lib/pkgconfig/libsasl2.pc",
+                "path_type": "hardlink",
+                "sha256": "7bf0630595f470c8d233e07734ae33253111862b8592d8e10a364533de7c5c2d",
+                "sha256_in_prefix": "6fdffb72f5e42877192a09182dd3fa2fabac38284ccd27e98009ead7ef01d749",
+                "size_in_bytes": 524
+            },
+            {
+                "_path": "lib/sasl2/libanonymous.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "dbeb8a45e90b84cf6b9cdd88612419629bcb8ee74f0c772c0c61be60d98cf052",
+                "size_in_bytes": 72064
+            },
+            {
+                "_path": "lib/sasl2/libanonymous.so.3",
+                "path_type": "softlink",
+                "sha256_in_prefix": "dbeb8a45e90b84cf6b9cdd88612419629bcb8ee74f0c772c0c61be60d98cf052",
+                "size_in_bytes": 72064
+            },
+            {
+                "_path": "lib/sasl2/libanonymous.so.3.0.0",
+                "path_type": "hardlink",
+                "sha256": "dbeb8a45e90b84cf6b9cdd88612419629bcb8ee74f0c772c0c61be60d98cf052",
+                "sha256_in_prefix": "dbeb8a45e90b84cf6b9cdd88612419629bcb8ee74f0c772c0c61be60d98cf052",
+                "size_in_bytes": 72064
+            },
+            {
+                "_path": "lib/sasl2/libcrammd5.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "eed6c2b59af444663dbc0790d386baf6ffc6730d03e9c7e394f8490f9c3eb131",
+                "size_in_bytes": 72224
+            },
+            {
+                "_path": "lib/sasl2/libcrammd5.so.3",
+                "path_type": "softlink",
+                "sha256_in_prefix": "eed6c2b59af444663dbc0790d386baf6ffc6730d03e9c7e394f8490f9c3eb131",
+                "size_in_bytes": 72224
+            },
+            {
+                "_path": "lib/sasl2/libcrammd5.so.3.0.0",
+                "path_type": "hardlink",
+                "sha256": "eed6c2b59af444663dbc0790d386baf6ffc6730d03e9c7e394f8490f9c3eb131",
+                "sha256_in_prefix": "eed6c2b59af444663dbc0790d386baf6ffc6730d03e9c7e394f8490f9c3eb131",
+                "size_in_bytes": 72224
+            },
+            {
+                "_path": "lib/sasl2/libdigestmd5.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "a470176fbd35a670e634a777afd09fa54b51a62bdfde8d5356ee9490f6873e64",
+                "size_in_bytes": 75152
+            },
+            {
+                "_path": "lib/sasl2/libdigestmd5.so.3",
+                "path_type": "softlink",
+                "sha256_in_prefix": "a470176fbd35a670e634a777afd09fa54b51a62bdfde8d5356ee9490f6873e64",
+                "size_in_bytes": 75152
+            },
+            {
+                "_path": "lib/sasl2/libdigestmd5.so.3.0.0",
+                "path_type": "hardlink",
+                "sha256": "a470176fbd35a670e634a777afd09fa54b51a62bdfde8d5356ee9490f6873e64",
+                "sha256_in_prefix": "a470176fbd35a670e634a777afd09fa54b51a62bdfde8d5356ee9490f6873e64",
+                "size_in_bytes": 75152
+            },
+            {
+                "_path": "lib/sasl2/libgs2.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "048586339e69b7186d72716b1f422771db9f7b49a304fd6c37f56023fdbe46d5",
+                "size_in_bytes": 74448
+            },
+            {
+                "_path": "lib/sasl2/libgs2.so.3",
+                "path_type": "softlink",
+                "sha256_in_prefix": "048586339e69b7186d72716b1f422771db9f7b49a304fd6c37f56023fdbe46d5",
+                "size_in_bytes": 74448
+            },
+            {
+                "_path": "lib/sasl2/libgs2.so.3.0.0",
+                "path_type": "hardlink",
+                "sha256": "048586339e69b7186d72716b1f422771db9f7b49a304fd6c37f56023fdbe46d5",
+                "sha256_in_prefix": "048586339e69b7186d72716b1f422771db9f7b49a304fd6c37f56023fdbe46d5",
+                "size_in_bytes": 74448
+            },
+            {
+                "_path": "lib/sasl2/libgssapiv2.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "a3a5962c5301feb2890f38c095f22f9f061960286a5a6e39b21d527c4f018691",
+                "size_in_bytes": 74192
+            },
+            {
+                "_path": "lib/sasl2/libgssapiv2.so.3",
+                "path_type": "softlink",
+                "sha256_in_prefix": "a3a5962c5301feb2890f38c095f22f9f061960286a5a6e39b21d527c4f018691",
+                "size_in_bytes": 74192
+            },
+            {
+                "_path": "lib/sasl2/libgssapiv2.so.3.0.0",
+                "path_type": "hardlink",
+                "sha256": "a3a5962c5301feb2890f38c095f22f9f061960286a5a6e39b21d527c4f018691",
+                "sha256_in_prefix": "a3a5962c5301feb2890f38c095f22f9f061960286a5a6e39b21d527c4f018691",
+                "size_in_bytes": 74192
+            },
+            {
+                "_path": "lib/sasl2/libotp.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "d17931f68e97b237e5c275a929bf4e0816d22524a5e9db43c55e5d64cc98485b",
+                "size_in_bytes": 155256
+            },
+            {
+                "_path": "lib/sasl2/libotp.so.3",
+                "path_type": "softlink",
+                "sha256_in_prefix": "d17931f68e97b237e5c275a929bf4e0816d22524a5e9db43c55e5d64cc98485b",
+                "size_in_bytes": 155256
+            },
+            {
+                "_path": "lib/sasl2/libotp.so.3.0.0",
+                "path_type": "hardlink",
+                "sha256": "d17931f68e97b237e5c275a929bf4e0816d22524a5e9db43c55e5d64cc98485b",
+                "sha256_in_prefix": "d17931f68e97b237e5c275a929bf4e0816d22524a5e9db43c55e5d64cc98485b",
+                "size_in_bytes": 155256
+            },
+            {
+                "_path": "lib/sasl2/libplain.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "8891ed855c30742ca7ead78d4c6d8d482ff9b98f5fbb3444c5badad201de933c",
+                "size_in_bytes": 71904
+            },
+            {
+                "_path": "lib/sasl2/libplain.so.3",
+                "path_type": "softlink",
+                "sha256_in_prefix": "8891ed855c30742ca7ead78d4c6d8d482ff9b98f5fbb3444c5badad201de933c",
+                "size_in_bytes": 71904
+            },
+            {
+                "_path": "lib/sasl2/libplain.so.3.0.0",
+                "path_type": "hardlink",
+                "sha256": "8891ed855c30742ca7ead78d4c6d8d482ff9b98f5fbb3444c5badad201de933c",
+                "sha256_in_prefix": "8891ed855c30742ca7ead78d4c6d8d482ff9b98f5fbb3444c5badad201de933c",
+                "size_in_bytes": 71904
+            },
+            {
+                "_path": "lib/sasl2/libscram.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "eac7cdb3895d759f67bf87019f804523a2501eb1c75b843f1ae69701456bf254",
+                "size_in_bytes": 73712
+            },
+            {
+                "_path": "lib/sasl2/libscram.so.3",
+                "path_type": "softlink",
+                "sha256_in_prefix": "eac7cdb3895d759f67bf87019f804523a2501eb1c75b843f1ae69701456bf254",
+                "size_in_bytes": 73712
+            },
+            {
+                "_path": "lib/sasl2/libscram.so.3.0.0",
+                "path_type": "hardlink",
+                "sha256": "eac7cdb3895d759f67bf87019f804523a2501eb1c75b843f1ae69701456bf254",
+                "sha256_in_prefix": "eac7cdb3895d759f67bf87019f804523a2501eb1c75b843f1ae69701456bf254",
+                "size_in_bytes": 73712
+            },
+            {
+                "_path": "sbin/pluginviewer",
+                "path_type": "hardlink",
+                "sha256": "10768161d720d013c96e92fc0150694b91dba9664a9e6e17600c39c0e4b21d80",
+                "sha256_in_prefix": "e688408de879177d76f6f6f1e59ea991747f6b4a621a9a28bf7b523edff76cb2",
+                "size_in_bytes": 72712
+            },
+            {
+                "_path": "sbin/saslauthd",
+                "path_type": "hardlink",
+                "sha256": "87341d476c9fa0ff04ceb85a2858505eedec7671532ce79d4a37851afad139c5",
+                "sha256_in_prefix": "b54cea5cd4e7bb67f9d8889bad82f460abfb875343faeade4e9abc1e854bb67d",
+                "size_in_bytes": 147752
+            },
+            {
+                "_path": "sbin/testsaslauthd",
+                "path_type": "hardlink",
+                "sha256": "67bc524956230318092420065047be676be316d99342a82be46aa6369c125187",
+                "sha256_in_prefix": "67bc524956230318092420065047be676be316d99342a82be46aa6369c125187",
+                "size_in_bytes": 72152
+            },
+            {
+                "_path": "share/man/man3/sasl.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_authorize_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_auxprop.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_auxprop_getctx.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_auxprop_request.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_callbacks.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_canon_user_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_chalprompt_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_checkapop.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_checkpass.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_client_init.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_client_new.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_client_start.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_client_step.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_decode.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_dispose.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_done.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_encode.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_encodev.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_errdetail.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_errors.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_errstring.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_getconfpath_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_getopt_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_getpath_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_getprop.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_getrealm_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_getsecret_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_getsimple_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_global_listmech.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_idle.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_listmech.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_log_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_server_init.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_server_new.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_server_start.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_server_step.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_server_userdb_checkpass_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_server_userdb_setpass_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_setpass.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_setprop.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_user_exists.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man3/sasl_verifyfile_t.3",
+                "path_type": "hardlink",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+                "_path": "share/man/man8/saslauthd.8",
+                "path_type": "hardlink",
+                "sha256": "f3184ed8087b002d4cf8a0a54dd85d24d646bfa747bffc4acb50447fbd210544",
+                "sha256_in_prefix": "f3184ed8087b002d4cf8a0a54dd85d24d646bfa747bffc4acb50447fbd210544",
+                "size_in_bytes": 8285
+            },
+            {
+                "_path": "share/man/man8/testsaslauthd.8",
+                "path_type": "hardlink",
+                "sha256": "d4d1d0e8b97de64ae3efc459815bdadee8abc9bcd7b8d6704e2bdbc65b660c53",
+                "sha256_in_prefix": "d4d1d0e8b97de64ae3efc459815bdadee8abc9bcd7b8d6704e2bdbc65b660c53",
+                "size_in_bytes": 483
+            }
+        ],
+        "paths_version": 1
+    },
+    "platform": "linux",
+    "requested_spec": "",
+    "sha256": "0606296a3b0cc757229dd97db8c6dc0f77e54f975f89ae63c36fb01e2a2abe61",
+    "size": 224450,
+    "subdir": "linux-aarch64",
+    "timestamp": 1771943147,
+    "url": "https://conda.anaconda.org/conda-forge/linux-aarch64/cyrus-sasl-2.1.28-h6598af7_1.conda",
+    "version": "2.1.28"
+}

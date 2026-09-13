@@ -1,0 +1,1930 @@
+{
+    "arch": "aarch64",
+    "build": "hfefdfc9_0",
+    "build_number": 0,
+    "build_string": "hfefdfc9_0",
+    "channel": "conda-forge",
+    "constrains": [],
+    "depends": [
+        "libgcc >=14",
+        "libstdcxx >=14"
+    ],
+    "extracted_package_dir": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/liburing-2.14-hfefdfc9_0",
+    "files": [
+        "include/liburing.h",
+        "include/liburing/barrier.h",
+        "include/liburing/compat.h",
+        "include/liburing/io_uring.h",
+        "include/liburing/io_uring/query.h",
+        "include/liburing/io_uring_version.h",
+        "lib/liburing-ffi.so",
+        "lib/liburing-ffi.so.2",
+        "lib/liburing-ffi.so.2.14",
+        "lib/liburing.so",
+        "lib/liburing.so.2",
+        "lib/liburing.so.2.14",
+        "lib/pkgconfig/liburing-ffi.pc",
+        "lib/pkgconfig/liburing.pc",
+        "man/man2/io_uring_enter.2",
+        "man/man2/io_uring_enter2.2",
+        "man/man2/io_uring_register.2",
+        "man/man2/io_uring_setup.2",
+        "man/man3/IO_URING_CHECK_VERSION.3",
+        "man/man3/IO_URING_VERSION_MAJOR.3",
+        "man/man3/IO_URING_VERSION_MINOR.3",
+        "man/man3/__io_uring_buf_ring_cq_advance.3",
+        "man/man3/io_uring_buf_ring_add.3",
+        "man/man3/io_uring_buf_ring_advance.3",
+        "man/man3/io_uring_buf_ring_available.3",
+        "man/man3/io_uring_buf_ring_cq_advance.3",
+        "man/man3/io_uring_buf_ring_init.3",
+        "man/man3/io_uring_buf_ring_mask.3",
+        "man/man3/io_uring_check_version.3",
+        "man/man3/io_uring_clone_buffers.3",
+        "man/man3/io_uring_clone_buffers_offset.3",
+        "man/man3/io_uring_close_ring_fd.3",
+        "man/man3/io_uring_cq_advance.3",
+        "man/man3/io_uring_cq_eventfd_enabled.3",
+        "man/man3/io_uring_cq_eventfd_toggle.3",
+        "man/man3/io_uring_cq_has_overflow.3",
+        "man/man3/io_uring_cq_ready.3",
+        "man/man3/io_uring_cqe_get_data.3",
+        "man/man3/io_uring_cqe_get_data64.3",
+        "man/man3/io_uring_cqe_nr.3",
+        "man/man3/io_uring_cqe_seen.3",
+        "man/man3/io_uring_enable_rings.3",
+        "man/man3/io_uring_for_each_cqe.3",
+        "man/man3/io_uring_free_buf_ring.3",
+        "man/man3/io_uring_free_probe.3",
+        "man/man3/io_uring_get_events.3",
+        "man/man3/io_uring_get_probe.3",
+        "man/man3/io_uring_get_probe_ring.3",
+        "man/man3/io_uring_get_sqe.3",
+        "man/man3/io_uring_get_sqe128.3",
+        "man/man3/io_uring_major_version.3",
+        "man/man3/io_uring_memory_size_params.3",
+        "man/man3/io_uring_minor_version.3",
+        "man/man3/io_uring_mlock_size.3",
+        "man/man3/io_uring_mlock_size_params.3",
+        "man/man3/io_uring_opcode_supported.3",
+        "man/man3/io_uring_peek_batch_cqe.3",
+        "man/man3/io_uring_peek_cqe.3",
+        "man/man3/io_uring_prep_accept.3",
+        "man/man3/io_uring_prep_accept_direct.3",
+        "man/man3/io_uring_prep_bind.3",
+        "man/man3/io_uring_prep_cancel.3",
+        "man/man3/io_uring_prep_cancel64.3",
+        "man/man3/io_uring_prep_cancel_fd.3",
+        "man/man3/io_uring_prep_close.3",
+        "man/man3/io_uring_prep_close_direct.3",
+        "man/man3/io_uring_prep_cmd_discard.3",
+        "man/man3/io_uring_prep_cmd_getsockname.3",
+        "man/man3/io_uring_prep_cmd_sock.3",
+        "man/man3/io_uring_prep_connect.3",
+        "man/man3/io_uring_prep_epoll_ctl.3",
+        "man/man3/io_uring_prep_epoll_wait.3",
+        "man/man3/io_uring_prep_fadvise.3",
+        "man/man3/io_uring_prep_fadvise64.3",
+        "man/man3/io_uring_prep_fallocate.3",
+        "man/man3/io_uring_prep_fgetxattr.3",
+        "man/man3/io_uring_prep_files_update.3",
+        "man/man3/io_uring_prep_fixed_fd_install.3",
+        "man/man3/io_uring_prep_fsetxattr.3",
+        "man/man3/io_uring_prep_fsync.3",
+        "man/man3/io_uring_prep_ftruncate.3",
+        "man/man3/io_uring_prep_futex_wait.3",
+        "man/man3/io_uring_prep_futex_waitv.3",
+        "man/man3/io_uring_prep_futex_wake.3",
+        "man/man3/io_uring_prep_getxattr.3",
+        "man/man3/io_uring_prep_link.3",
+        "man/man3/io_uring_prep_link_timeout.3",
+        "man/man3/io_uring_prep_linkat.3",
+        "man/man3/io_uring_prep_listen.3",
+        "man/man3/io_uring_prep_madvise.3",
+        "man/man3/io_uring_prep_madvise64.3",
+        "man/man3/io_uring_prep_mkdir.3",
+        "man/man3/io_uring_prep_mkdirat.3",
+        "man/man3/io_uring_prep_msg_ring.3",
+        "man/man3/io_uring_prep_msg_ring_cqe_flags.3",
+        "man/man3/io_uring_prep_msg_ring_fd.3",
+        "man/man3/io_uring_prep_msg_ring_fd_alloc.3",
+        "man/man3/io_uring_prep_multishot_accept.3",
+        "man/man3/io_uring_prep_multishot_accept_direct.3",
+        "man/man3/io_uring_prep_nop.3",
+        "man/man3/io_uring_prep_nop128.3",
+        "man/man3/io_uring_prep_open.3",
+        "man/man3/io_uring_prep_open_direct.3",
+        "man/man3/io_uring_prep_openat.3",
+        "man/man3/io_uring_prep_openat2.3",
+        "man/man3/io_uring_prep_openat2_direct.3",
+        "man/man3/io_uring_prep_openat_direct.3",
+        "man/man3/io_uring_prep_pipe.3",
+        "man/man3/io_uring_prep_pipe_direct.3",
+        "man/man3/io_uring_prep_poll_add.3",
+        "man/man3/io_uring_prep_poll_multishot.3",
+        "man/man3/io_uring_prep_poll_remove.3",
+        "man/man3/io_uring_prep_poll_update.3",
+        "man/man3/io_uring_prep_provide_buffers.3",
+        "man/man3/io_uring_prep_read.3",
+        "man/man3/io_uring_prep_read_fixed.3",
+        "man/man3/io_uring_prep_read_multishot.3",
+        "man/man3/io_uring_prep_readv.3",
+        "man/man3/io_uring_prep_readv2.3",
+        "man/man3/io_uring_prep_readv_fixed.3",
+        "man/man3/io_uring_prep_recv.3",
+        "man/man3/io_uring_prep_recv_multishot.3",
+        "man/man3/io_uring_prep_recvmsg.3",
+        "man/man3/io_uring_prep_recvmsg_multishot.3",
+        "man/man3/io_uring_prep_remove_buffers.3",
+        "man/man3/io_uring_prep_rename.3",
+        "man/man3/io_uring_prep_renameat.3",
+        "man/man3/io_uring_prep_send.3",
+        "man/man3/io_uring_prep_send_bundle.3",
+        "man/man3/io_uring_prep_send_set_addr.3",
+        "man/man3/io_uring_prep_send_zc.3",
+        "man/man3/io_uring_prep_send_zc_fixed.3",
+        "man/man3/io_uring_prep_sendmsg.3",
+        "man/man3/io_uring_prep_sendmsg_zc.3",
+        "man/man3/io_uring_prep_sendmsg_zc_fixed.3",
+        "man/man3/io_uring_prep_sendto.3",
+        "man/man3/io_uring_prep_setxattr.3",
+        "man/man3/io_uring_prep_shutdown.3",
+        "man/man3/io_uring_prep_socket.3",
+        "man/man3/io_uring_prep_socket_direct.3",
+        "man/man3/io_uring_prep_socket_direct_alloc.3",
+        "man/man3/io_uring_prep_splice.3",
+        "man/man3/io_uring_prep_statx.3",
+        "man/man3/io_uring_prep_symlink.3",
+        "man/man3/io_uring_prep_symlinkat.3",
+        "man/man3/io_uring_prep_sync_file_range.3",
+        "man/man3/io_uring_prep_tee.3",
+        "man/man3/io_uring_prep_timeout.3",
+        "man/man3/io_uring_prep_timeout_remove.3",
+        "man/man3/io_uring_prep_timeout_update.3",
+        "man/man3/io_uring_prep_unlink.3",
+        "man/man3/io_uring_prep_unlinkat.3",
+        "man/man3/io_uring_prep_uring_cmd.3",
+        "man/man3/io_uring_prep_uring_cmd128.3",
+        "man/man3/io_uring_prep_waitid.3",
+        "man/man3/io_uring_prep_write.3",
+        "man/man3/io_uring_prep_write_fixed.3",
+        "man/man3/io_uring_prep_writev.3",
+        "man/man3/io_uring_prep_writev2.3",
+        "man/man3/io_uring_prep_writev_fixed.3",
+        "man/man3/io_uring_queue_exit.3",
+        "man/man3/io_uring_queue_init.3",
+        "man/man3/io_uring_queue_init_mem.3",
+        "man/man3/io_uring_queue_init_params.3",
+        "man/man3/io_uring_queue_mmap.3",
+        "man/man3/io_uring_recvmsg_cmsg_firsthdr.3",
+        "man/man3/io_uring_recvmsg_cmsg_nexthdr.3",
+        "man/man3/io_uring_recvmsg_name.3",
+        "man/man3/io_uring_recvmsg_out.3",
+        "man/man3/io_uring_recvmsg_payload.3",
+        "man/man3/io_uring_recvmsg_payload_length.3",
+        "man/man3/io_uring_recvmsg_validate.3",
+        "man/man3/io_uring_register_buf_ring.3",
+        "man/man3/io_uring_register_buffers.3",
+        "man/man3/io_uring_register_buffers_sparse.3",
+        "man/man3/io_uring_register_buffers_tags.3",
+        "man/man3/io_uring_register_buffers_update_tag.3",
+        "man/man3/io_uring_register_clock.3",
+        "man/man3/io_uring_register_eventfd.3",
+        "man/man3/io_uring_register_eventfd_async.3",
+        "man/man3/io_uring_register_file_alloc_range.3",
+        "man/man3/io_uring_register_files.3",
+        "man/man3/io_uring_register_files_sparse.3",
+        "man/man3/io_uring_register_files_tags.3",
+        "man/man3/io_uring_register_files_update.3",
+        "man/man3/io_uring_register_files_update_tag.3",
+        "man/man3/io_uring_register_ifq.3",
+        "man/man3/io_uring_register_iowq_aff.3",
+        "man/man3/io_uring_register_iowq_max_workers.3",
+        "man/man3/io_uring_register_napi.3",
+        "man/man3/io_uring_register_personality.3",
+        "man/man3/io_uring_register_probe.3",
+        "man/man3/io_uring_register_region.3",
+        "man/man3/io_uring_register_restrictions.3",
+        "man/man3/io_uring_register_ring_fd.3",
+        "man/man3/io_uring_register_sync_cancel.3",
+        "man/man3/io_uring_register_sync_msg.3",
+        "man/man3/io_uring_register_wait_reg.3",
+        "man/man3/io_uring_resize_rings.3",
+        "man/man3/io_uring_ring_dontfork.3",
+        "man/man3/io_uring_set_iowait.3",
+        "man/man3/io_uring_setup_buf_ring.3",
+        "man/man3/io_uring_sq_ready.3",
+        "man/man3/io_uring_sq_space_left.3",
+        "man/man3/io_uring_sqe_set_buf_group.3",
+        "man/man3/io_uring_sqe_set_data.3",
+        "man/man3/io_uring_sqe_set_data64.3",
+        "man/man3/io_uring_sqe_set_flags.3",
+        "man/man3/io_uring_sqring_wait.3",
+        "man/man3/io_uring_submit.3",
+        "man/man3/io_uring_submit_and_get_events.3",
+        "man/man3/io_uring_submit_and_wait.3",
+        "man/man3/io_uring_submit_and_wait_min_timeout.3",
+        "man/man3/io_uring_submit_and_wait_reg.3",
+        "man/man3/io_uring_submit_and_wait_timeout.3",
+        "man/man3/io_uring_unregister_buf_ring.3",
+        "man/man3/io_uring_unregister_buffers.3",
+        "man/man3/io_uring_unregister_eventfd.3",
+        "man/man3/io_uring_unregister_files.3",
+        "man/man3/io_uring_unregister_iowq_aff.3",
+        "man/man3/io_uring_unregister_napi.3",
+        "man/man3/io_uring_unregister_personality.3",
+        "man/man3/io_uring_unregister_ring_fd.3",
+        "man/man3/io_uring_wait_cqe.3",
+        "man/man3/io_uring_wait_cqe_nr.3",
+        "man/man3/io_uring_wait_cqe_timeout.3",
+        "man/man3/io_uring_wait_cqes.3",
+        "man/man3/io_uring_wait_cqes_min_timeout.3",
+        "man/man7/io_uring.7",
+        "man/man7/io_uring_cancelation.7",
+        "man/man7/io_uring_linked_requests.7",
+        "man/man7/io_uring_multishot.7",
+        "man/man7/io_uring_provided_buffers.7",
+        "man/man7/io_uring_registered_buffers.7",
+        "man/man7/io_uring_registered_files.7",
+        "man/man7/io_uring_setup_flags.7",
+        "man/man7/io_uring_sqpoll.7"
+    ],
+    "fn": "liburing-2.14-hfefdfc9_0.conda",
+    "license": "MIT",
+    "license_family": "MIT",
+    "link": {
+        "source": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/liburing-2.14-hfefdfc9_0",
+        "type": 1
+    },
+    "md5": "9d32167817a5a85724e8524436559229",
+    "name": "liburing",
+    "package_tarball_full_path": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/liburing-2.14-hfefdfc9_0.tar.bz2",
+    "paths_data": {
+        "paths": [
+            {
+                "_path": "include/liburing.h",
+                "path_type": "hardlink",
+                "sha256": "68f49c948d11c6cc609add6044cbf5809a1177c08d0a8b0cd05e9f5aeb340805",
+                "sha256_in_prefix": "68f49c948d11c6cc609add6044cbf5809a1177c08d0a8b0cd05e9f5aeb340805",
+                "size_in_bytes": 62116
+            },
+            {
+                "_path": "include/liburing/barrier.h",
+                "path_type": "hardlink",
+                "sha256": "deff04c3a590c95abe122a677d885dcd6790d5f6b1163566e2ab7d1b86911ce3",
+                "sha256_in_prefix": "deff04c3a590c95abe122a677d885dcd6790d5f6b1163566e2ab7d1b86911ce3",
+                "size_in_bytes": 2625
+            },
+            {
+                "_path": "include/liburing/compat.h",
+                "path_type": "hardlink",
+                "sha256": "76fb8f15b1d247b0e43edc2907f7d3a871644c2023658c489697d18bd5d89d76",
+                "sha256_in_prefix": "76fb8f15b1d247b0e43edc2907f7d3a871644c2023658c489697d18bd5d89d76",
+                "size_in_bytes": 1062
+            },
+            {
+                "_path": "include/liburing/io_uring.h",
+                "path_type": "hardlink",
+                "sha256": "50bdc8ed67464033cf88377747719fe746255fcae986eb3738e7987b592f452e",
+                "sha256_in_prefix": "50bdc8ed67464033cf88377747719fe746255fcae986eb3738e7987b592f452e",
+                "size_in_bytes": 27622
+            },
+            {
+                "_path": "include/liburing/io_uring/query.h",
+                "path_type": "hardlink",
+                "sha256": "706af1f4b5a72680994be4574d4684e6ff5c55d2ea1298b6ea7159476cadfb4d",
+                "sha256_in_prefix": "706af1f4b5a72680994be4574d4684e6ff5c55d2ea1298b6ea7159476cadfb4d",
+                "size_in_bytes": 944
+            },
+            {
+                "_path": "include/liburing/io_uring_version.h",
+                "path_type": "hardlink",
+                "sha256": "ff8178bb6fbb5f6bd3e8a69404fd465adf0856da39ccceb615812ca035702661",
+                "sha256_in_prefix": "ff8178bb6fbb5f6bd3e8a69404fd465adf0856da39ccceb615812ca035702661",
+                "size_in_bytes": 165
+            },
+            {
+                "_path": "lib/liburing-ffi.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "199b1778e7242a6f8bfbc912ef96d633d2fc2da75dae1ad0b7b8f206320b2f71",
+                "size_in_bytes": 79696
+            },
+            {
+                "_path": "lib/liburing-ffi.so.2",
+                "path_type": "softlink",
+                "sha256_in_prefix": "199b1778e7242a6f8bfbc912ef96d633d2fc2da75dae1ad0b7b8f206320b2f71",
+                "size_in_bytes": 79696
+            },
+            {
+                "_path": "lib/liburing-ffi.so.2.14",
+                "path_type": "hardlink",
+                "sha256": "199b1778e7242a6f8bfbc912ef96d633d2fc2da75dae1ad0b7b8f206320b2f71",
+                "sha256_in_prefix": "199b1778e7242a6f8bfbc912ef96d633d2fc2da75dae1ad0b7b8f206320b2f71",
+                "size_in_bytes": 79696
+            },
+            {
+                "_path": "lib/liburing.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "56e29debda070e4a494f76b95d3f9548dd3420fbad40463b803f28a61b1a1839",
+                "size_in_bytes": 72880
+            },
+            {
+                "_path": "lib/liburing.so.2",
+                "path_type": "softlink",
+                "sha256_in_prefix": "56e29debda070e4a494f76b95d3f9548dd3420fbad40463b803f28a61b1a1839",
+                "size_in_bytes": 72880
+            },
+            {
+                "_path": "lib/liburing.so.2.14",
+                "path_type": "hardlink",
+                "sha256": "56e29debda070e4a494f76b95d3f9548dd3420fbad40463b803f28a61b1a1839",
+                "sha256_in_prefix": "56e29debda070e4a494f76b95d3f9548dd3420fbad40463b803f28a61b1a1839",
+                "size_in_bytes": 72880
+            },
+            {
+                "_path": "lib/pkgconfig/liburing-ffi.pc",
+                "path_type": "hardlink",
+                "sha256": "bbd4cc84f719373831cdba007c315d0ce9feed5fa3073fc8aa5ff0d10ee92ca4",
+                "sha256_in_prefix": "9e9f0a3918ec88b5f7d408e383723b53718f04df5a4d5e1be358577834d44629",
+                "size_in_bytes": 988
+            },
+            {
+                "_path": "lib/pkgconfig/liburing.pc",
+                "path_type": "hardlink",
+                "sha256": "3a3951f1f6a40f8e8ca4d2016456527cc8781e7a53be7a93df64e53ba5c26a62",
+                "sha256_in_prefix": "9c3a63a7f33af656da6290c97a94e3604b9ebb91281d38ae54d21ae66749b9ee",
+                "size_in_bytes": 980
+            },
+            {
+                "_path": "man/man2/io_uring_enter.2",
+                "path_type": "hardlink",
+                "sha256": "19edd85cbbfbd46d0a02a2ef8f55b6ab0828db7b19f0370992c0961599ee2b63",
+                "sha256_in_prefix": "19edd85cbbfbd46d0a02a2ef8f55b6ab0828db7b19f0370992c0961599ee2b63",
+                "size_in_bytes": 60569
+            },
+            {
+                "_path": "man/man2/io_uring_enter2.2",
+                "path_type": "hardlink",
+                "sha256": "19edd85cbbfbd46d0a02a2ef8f55b6ab0828db7b19f0370992c0961599ee2b63",
+                "sha256_in_prefix": "19edd85cbbfbd46d0a02a2ef8f55b6ab0828db7b19f0370992c0961599ee2b63",
+                "size_in_bytes": 60569
+            },
+            {
+                "_path": "man/man2/io_uring_register.2",
+                "path_type": "hardlink",
+                "sha256": "28db1345fc04962cc1126322360b198ac49e4694143d40a05fb6bd4be2bc8c9a",
+                "sha256_in_prefix": "28db1345fc04962cc1126322360b198ac49e4694143d40a05fb6bd4be2bc8c9a",
+                "size_in_bytes": 34996
+            },
+            {
+                "_path": "man/man2/io_uring_setup.2",
+                "path_type": "hardlink",
+                "sha256": "0b950ee7c00fe9e70cdec2b250fd5c9693c33c45c1291ef2981c55e1e833ac5f",
+                "sha256_in_prefix": "0b950ee7c00fe9e70cdec2b250fd5c9693c33c45c1291ef2981c55e1e833ac5f",
+                "size_in_bytes": 27346
+            },
+            {
+                "_path": "man/man3/IO_URING_CHECK_VERSION.3",
+                "path_type": "hardlink",
+                "sha256": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "sha256_in_prefix": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "size_in_bytes": 1523
+            },
+            {
+                "_path": "man/man3/IO_URING_VERSION_MAJOR.3",
+                "path_type": "hardlink",
+                "sha256": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "sha256_in_prefix": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "size_in_bytes": 1523
+            },
+            {
+                "_path": "man/man3/IO_URING_VERSION_MINOR.3",
+                "path_type": "hardlink",
+                "sha256": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "sha256_in_prefix": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "size_in_bytes": 1523
+            },
+            {
+                "_path": "man/man3/__io_uring_buf_ring_cq_advance.3",
+                "path_type": "hardlink",
+                "sha256": "f671697809a412ea156f96f195fa6828c7caaa98b897d8717599e8e77edcbeb8",
+                "sha256_in_prefix": "f671697809a412ea156f96f195fa6828c7caaa98b897d8717599e8e77edcbeb8",
+                "size_in_bytes": 1744
+            },
+            {
+                "_path": "man/man3/io_uring_buf_ring_add.3",
+                "path_type": "hardlink",
+                "sha256": "dc926a363ec91f6f9931e181ae5ead511c176a34f682d2ac327a59bc803b2279",
+                "sha256_in_prefix": "dc926a363ec91f6f9931e181ae5ead511c176a34f682d2ac327a59bc803b2279",
+                "size_in_bytes": 2044
+            },
+            {
+                "_path": "man/man3/io_uring_buf_ring_advance.3",
+                "path_type": "hardlink",
+                "sha256": "e7cf0f6234f9cdf716ad64b799d27a173db4057a5f044b2d5f9be858f108bd96",
+                "sha256_in_prefix": "e7cf0f6234f9cdf716ad64b799d27a173db4057a5f044b2d5f9be858f108bd96",
+                "size_in_bytes": 826
+            },
+            {
+                "_path": "man/man3/io_uring_buf_ring_available.3",
+                "path_type": "hardlink",
+                "sha256": "61ca813b34ce930e224590cd92df29e296e59c11f7400ae0d503c31cbb439196",
+                "sha256_in_prefix": "61ca813b34ce930e224590cd92df29e296e59c11f7400ae0d503c31cbb439196",
+                "size_in_bytes": 1676
+            },
+            {
+                "_path": "man/man3/io_uring_buf_ring_cq_advance.3",
+                "path_type": "hardlink",
+                "sha256": "f671697809a412ea156f96f195fa6828c7caaa98b897d8717599e8e77edcbeb8",
+                "sha256_in_prefix": "f671697809a412ea156f96f195fa6828c7caaa98b897d8717599e8e77edcbeb8",
+                "size_in_bytes": 1744
+            },
+            {
+                "_path": "man/man3/io_uring_buf_ring_init.3",
+                "path_type": "hardlink",
+                "sha256": "7b2cce29db6d49e47206029709d7b2fe68996b9dd4e761c05b007a1dd7546342",
+                "sha256_in_prefix": "7b2cce29db6d49e47206029709d7b2fe68996b9dd4e761c05b007a1dd7546342",
+                "size_in_bytes": 963
+            },
+            {
+                "_path": "man/man3/io_uring_buf_ring_mask.3",
+                "path_type": "hardlink",
+                "sha256": "e80097b4d93b7488d8b65a0b7f0ad3b0d8d57d46b769c66aa9335596d4914794",
+                "sha256_in_prefix": "e80097b4d93b7488d8b65a0b7f0ad3b0d8d57d46b769c66aa9335596d4914794",
+                "size_in_bytes": 687
+            },
+            {
+                "_path": "man/man3/io_uring_check_version.3",
+                "path_type": "hardlink",
+                "sha256": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "sha256_in_prefix": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "size_in_bytes": 1523
+            },
+            {
+                "_path": "man/man3/io_uring_clone_buffers.3",
+                "path_type": "hardlink",
+                "sha256": "7b6a202e1daa9adf0c50c38e49eaa17b299fe8caf1196b4f294e009f4b7f8924",
+                "sha256_in_prefix": "7b6a202e1daa9adf0c50c38e49eaa17b299fe8caf1196b4f294e009f4b7f8924",
+                "size_in_bytes": 4985
+            },
+            {
+                "_path": "man/man3/io_uring_clone_buffers_offset.3",
+                "path_type": "hardlink",
+                "sha256": "7b6a202e1daa9adf0c50c38e49eaa17b299fe8caf1196b4f294e009f4b7f8924",
+                "sha256_in_prefix": "7b6a202e1daa9adf0c50c38e49eaa17b299fe8caf1196b4f294e009f4b7f8924",
+                "size_in_bytes": 4985
+            },
+            {
+                "_path": "man/man3/io_uring_close_ring_fd.3",
+                "path_type": "hardlink",
+                "sha256": "2253b829556c7a58c76a8aca96d27591dc0859897ef89868274c51551af1df1e",
+                "sha256_in_prefix": "2253b829556c7a58c76a8aca96d27591dc0859897ef89868274c51551af1df1e",
+                "size_in_bytes": 1445
+            },
+            {
+                "_path": "man/man3/io_uring_cq_advance.3",
+                "path_type": "hardlink",
+                "sha256": "9a31915aba5f016228accc12787168afc70d4df46bd4403ff377b770f5428b3d",
+                "sha256_in_prefix": "9a31915aba5f016228accc12787168afc70d4df46bd4403ff377b770f5428b3d",
+                "size_in_bytes": 1285
+            },
+            {
+                "_path": "man/man3/io_uring_cq_eventfd_enabled.3",
+                "path_type": "hardlink",
+                "sha256": "1df895d5c59c1f25d0b4e41c5f06cd857a755159b568171ab1a22cf85456086d",
+                "sha256_in_prefix": "1df895d5c59c1f25d0b4e41c5f06cd857a755159b568171ab1a22cf85456086d",
+                "size_in_bytes": 1026
+            },
+            {
+                "_path": "man/man3/io_uring_cq_eventfd_toggle.3",
+                "path_type": "hardlink",
+                "sha256": "265d7a47821be834acaca6e494c34b5ef11548946bee1067c7a98bbbeb2c60f2",
+                "sha256_in_prefix": "265d7a47821be834acaca6e494c34b5ef11548946bee1067c7a98bbbeb2c60f2",
+                "size_in_bytes": 1294
+            },
+            {
+                "_path": "man/man3/io_uring_cq_has_overflow.3",
+                "path_type": "hardlink",
+                "sha256": "669ccc0a160e69e9d9e49ad1d9eafa6d1c411206d2646645b3e395d9b4d4d642",
+                "sha256_in_prefix": "669ccc0a160e69e9d9e49ad1d9eafa6d1c411206d2646645b3e395d9b4d4d642",
+                "size_in_bytes": 1083
+            },
+            {
+                "_path": "man/man3/io_uring_cq_ready.3",
+                "path_type": "hardlink",
+                "sha256": "b27ed722d103fa5d3b1735a79a54ea46517f672c1ca59f022d02c556c128e770",
+                "sha256_in_prefix": "b27ed722d103fa5d3b1735a79a54ea46517f672c1ca59f022d02c556c128e770",
+                "size_in_bytes": 678
+            },
+            {
+                "_path": "man/man3/io_uring_cqe_get_data.3",
+                "path_type": "hardlink",
+                "sha256": "decdcbb23066f4de641b027c8c665e24c220458e5772d550cf4ff4039c749400",
+                "sha256_in_prefix": "decdcbb23066f4de641b027c8c665e24c220458e5772d550cf4ff4039c749400",
+                "size_in_bytes": 1334
+            },
+            {
+                "_path": "man/man3/io_uring_cqe_get_data64.3",
+                "path_type": "hardlink",
+                "sha256": "decdcbb23066f4de641b027c8c665e24c220458e5772d550cf4ff4039c749400",
+                "sha256_in_prefix": "decdcbb23066f4de641b027c8c665e24c220458e5772d550cf4ff4039c749400",
+                "size_in_bytes": 1334
+            },
+            {
+                "_path": "man/man3/io_uring_cqe_nr.3",
+                "path_type": "hardlink",
+                "sha256": "e4636b60f50f11165ed45d13b8e8ea1af6416bb4b1201501e0166bbe00102090",
+                "sha256_in_prefix": "e4636b60f50f11165ed45d13b8e8ea1af6416bb4b1201501e0166bbe00102090",
+                "size_in_bytes": 962
+            },
+            {
+                "_path": "man/man3/io_uring_cqe_seen.3",
+                "path_type": "hardlink",
+                "sha256": "2c4cb8631b5722c2ab50f2253a0d63e97e4ab4ca47a3fb91d20a2e76f3d1bcd8",
+                "sha256_in_prefix": "2c4cb8631b5722c2ab50f2253a0d63e97e4ab4ca47a3fb91d20a2e76f3d1bcd8",
+                "size_in_bytes": 1076
+            },
+            {
+                "_path": "man/man3/io_uring_enable_rings.3",
+                "path_type": "hardlink",
+                "sha256": "ad194618d6f2e06d0709f9a4a12acb78bdad208824ff1eb7c3b6a765bd282acd",
+                "sha256_in_prefix": "ad194618d6f2e06d0709f9a4a12acb78bdad208824ff1eb7c3b6a765bd282acd",
+                "size_in_bytes": 925
+            },
+            {
+                "_path": "man/man3/io_uring_for_each_cqe.3",
+                "path_type": "hardlink",
+                "sha256": "15a58cc8577c3f5386bdcc97f7bb4be0191f1937852fe3fd4bc4e5ff9b764a48",
+                "sha256_in_prefix": "15a58cc8577c3f5386bdcc97f7bb4be0191f1937852fe3fd4bc4e5ff9b764a48",
+                "size_in_bytes": 1569
+            },
+            {
+                "_path": "man/man3/io_uring_free_buf_ring.3",
+                "path_type": "hardlink",
+                "sha256": "571ed9337b6ee25a8f7ed7582e8c4dd8c75beef7a8152059c913c02897f84fc4",
+                "sha256_in_prefix": "571ed9337b6ee25a8f7ed7582e8c4dd8c75beef7a8152059c913c02897f84fc4",
+                "size_in_bytes": 1448
+            },
+            {
+                "_path": "man/man3/io_uring_free_probe.3",
+                "path_type": "hardlink",
+                "sha256": "78b6e66b9c58aa84f57e63bf63db551b3eebc347a77b2f2bd896d52f01d1dc32",
+                "sha256_in_prefix": "78b6e66b9c58aa84f57e63bf63db551b3eebc347a77b2f2bd896d52f01d1dc32",
+                "size_in_bytes": 559
+            },
+            {
+                "_path": "man/man3/io_uring_get_events.3",
+                "path_type": "hardlink",
+                "sha256": "903733a68b6815bbf08e23acd86d17e4c483227430ef85f5af3d23631913d49f",
+                "sha256_in_prefix": "903733a68b6815bbf08e23acd86d17e4c483227430ef85f5af3d23631913d49f",
+                "size_in_bytes": 935
+            },
+            {
+                "_path": "man/man3/io_uring_get_probe.3",
+                "path_type": "hardlink",
+                "sha256": "804b0e3033be2d18a5cff3ed1f039a57a9a49f2d86260b13e3d8e18ca6bb07d0",
+                "sha256_in_prefix": "804b0e3033be2d18a5cff3ed1f039a57a9a49f2d86260b13e3d8e18ca6bb07d0",
+                "size_in_bytes": 836
+            },
+            {
+                "_path": "man/man3/io_uring_get_probe_ring.3",
+                "path_type": "hardlink",
+                "sha256": "75ace02ad8e3b82317e11b3454a8b06bb6a21e2e8f2ac1e3204fe176c366c699",
+                "sha256_in_prefix": "75ace02ad8e3b82317e11b3454a8b06bb6a21e2e8f2ac1e3204fe176c366c699",
+                "size_in_bytes": 1121
+            },
+            {
+                "_path": "man/man3/io_uring_get_sqe.3",
+                "path_type": "hardlink",
+                "sha256": "283a4d8ed8a66798a5080473fe6753c5d9ed39fc35c18f9fc7777ccc2ba75abc",
+                "sha256_in_prefix": "283a4d8ed8a66798a5080473fe6753c5d9ed39fc35c18f9fc7777ccc2ba75abc",
+                "size_in_bytes": 1596
+            },
+            {
+                "_path": "man/man3/io_uring_get_sqe128.3",
+                "path_type": "hardlink",
+                "sha256": "804af1c7b8c8ec4ead757c3720090839ffb890610fa72cd864471858d5a484af",
+                "sha256_in_prefix": "804af1c7b8c8ec4ead757c3720090839ffb890610fa72cd864471858d5a484af",
+                "size_in_bytes": 1802
+            },
+            {
+                "_path": "man/man3/io_uring_major_version.3",
+                "path_type": "hardlink",
+                "sha256": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "sha256_in_prefix": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "size_in_bytes": 1523
+            },
+            {
+                "_path": "man/man3/io_uring_memory_size_params.3",
+                "path_type": "hardlink",
+                "sha256": "7a3f112503ae3e10ebfc07582b2df04a8590826f5f6898f1b5d2bb72b8aa01d4",
+                "sha256_in_prefix": "7a3f112503ae3e10ebfc07582b2df04a8590826f5f6898f1b5d2bb72b8aa01d4",
+                "size_in_bytes": 1277
+            },
+            {
+                "_path": "man/man3/io_uring_minor_version.3",
+                "path_type": "hardlink",
+                "sha256": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "sha256_in_prefix": "9695dd0d7bd6ba2a5ab4b0f58e06866dbf3f11ce352f300ab5a305fa09811804",
+                "size_in_bytes": 1523
+            },
+            {
+                "_path": "man/man3/io_uring_mlock_size.3",
+                "path_type": "hardlink",
+                "sha256": "c4a75f96706c3798554f51bf6d3c13c4d1b41850b49b91a34fc1db2f9abf1f4e",
+                "sha256_in_prefix": "c4a75f96706c3798554f51bf6d3c13c4d1b41850b49b91a34fc1db2f9abf1f4e",
+                "size_in_bytes": 1208
+            },
+            {
+                "_path": "man/man3/io_uring_mlock_size_params.3",
+                "path_type": "hardlink",
+                "sha256": "7e361246e1390a0da6f54cf057588c855d2e14fb6d42bce9d654a8d1237e6552",
+                "sha256_in_prefix": "7e361246e1390a0da6f54cf057588c855d2e14fb6d42bce9d654a8d1237e6552",
+                "size_in_bytes": 1395
+            },
+            {
+                "_path": "man/man3/io_uring_opcode_supported.3",
+                "path_type": "hardlink",
+                "sha256": "d4cf7738143c642e0828e41bd999765a1d93d51b60b46b951f7e4d02f0cec4b3",
+                "sha256_in_prefix": "d4cf7738143c642e0828e41bd999765a1d93d51b60b46b951f7e4d02f0cec4b3",
+                "size_in_bytes": 811
+            },
+            {
+                "_path": "man/man3/io_uring_peek_batch_cqe.3",
+                "path_type": "hardlink",
+                "sha256": "9cdd55f1af2ec4067190bda7980b73f8f17c2386b787f6f53250ee8b58f19f1f",
+                "sha256_in_prefix": "9cdd55f1af2ec4067190bda7980b73f8f17c2386b787f6f53250ee8b58f19f1f",
+                "size_in_bytes": 1700
+            },
+            {
+                "_path": "man/man3/io_uring_peek_cqe.3",
+                "path_type": "hardlink",
+                "sha256": "9cdd55f1af2ec4067190bda7980b73f8f17c2386b787f6f53250ee8b58f19f1f",
+                "sha256_in_prefix": "9cdd55f1af2ec4067190bda7980b73f8f17c2386b787f6f53250ee8b58f19f1f",
+                "size_in_bytes": 1700
+            },
+            {
+                "_path": "man/man3/io_uring_prep_accept.3",
+                "path_type": "hardlink",
+                "sha256": "d8c7cbe813faf526ba8d83f2cbbc9b2ea577bed87efb4388a27e8e705bc01c13",
+                "sha256_in_prefix": "d8c7cbe813faf526ba8d83f2cbbc9b2ea577bed87efb4388a27e8e705bc01c13",
+                "size_in_bytes": 6903
+            },
+            {
+                "_path": "man/man3/io_uring_prep_accept_direct.3",
+                "path_type": "hardlink",
+                "sha256": "d8c7cbe813faf526ba8d83f2cbbc9b2ea577bed87efb4388a27e8e705bc01c13",
+                "sha256_in_prefix": "d8c7cbe813faf526ba8d83f2cbbc9b2ea577bed87efb4388a27e8e705bc01c13",
+                "size_in_bytes": 6903
+            },
+            {
+                "_path": "man/man3/io_uring_prep_bind.3",
+                "path_type": "hardlink",
+                "sha256": "ed2c485faf20f16d859d301563440fc6b187fc52b37b0964077e897dbef060d2",
+                "sha256_in_prefix": "ed2c485faf20f16d859d301563440fc6b187fc52b37b0964077e897dbef060d2",
+                "size_in_bytes": 1285
+            },
+            {
+                "_path": "man/man3/io_uring_prep_cancel.3",
+                "path_type": "hardlink",
+                "sha256": "2d68eabbc809daa08d8ccd1394ca1de72079b926abb1d04c921ef1fae0483b7a",
+                "sha256_in_prefix": "2d68eabbc809daa08d8ccd1394ca1de72079b926abb1d04c921ef1fae0483b7a",
+                "size_in_bytes": 4495
+            },
+            {
+                "_path": "man/man3/io_uring_prep_cancel64.3",
+                "path_type": "hardlink",
+                "sha256": "2d68eabbc809daa08d8ccd1394ca1de72079b926abb1d04c921ef1fae0483b7a",
+                "sha256_in_prefix": "2d68eabbc809daa08d8ccd1394ca1de72079b926abb1d04c921ef1fae0483b7a",
+                "size_in_bytes": 4495
+            },
+            {
+                "_path": "man/man3/io_uring_prep_cancel_fd.3",
+                "path_type": "hardlink",
+                "sha256": "2d68eabbc809daa08d8ccd1394ca1de72079b926abb1d04c921ef1fae0483b7a",
+                "sha256_in_prefix": "2d68eabbc809daa08d8ccd1394ca1de72079b926abb1d04c921ef1fae0483b7a",
+                "size_in_bytes": 4495
+            },
+            {
+                "_path": "man/man3/io_uring_prep_close.3",
+                "path_type": "hardlink",
+                "sha256": "d6e56d99b7a971f7dba8849d325a2c44d57d7b800cfb359abda1ec061392c196",
+                "sha256_in_prefix": "d6e56d99b7a971f7dba8849d325a2c44d57d7b800cfb359abda1ec061392c196",
+                "size_in_bytes": 1839
+            },
+            {
+                "_path": "man/man3/io_uring_prep_close_direct.3",
+                "path_type": "hardlink",
+                "sha256": "d6e56d99b7a971f7dba8849d325a2c44d57d7b800cfb359abda1ec061392c196",
+                "sha256_in_prefix": "d6e56d99b7a971f7dba8849d325a2c44d57d7b800cfb359abda1ec061392c196",
+                "size_in_bytes": 1839
+            },
+            {
+                "_path": "man/man3/io_uring_prep_cmd_discard.3",
+                "path_type": "hardlink",
+                "sha256": "4571b6f97fae46f11ae764017c86947b00b00427e7bde740f51d6943d87c5296",
+                "sha256_in_prefix": "4571b6f97fae46f11ae764017c86947b00b00427e7bde740f51d6943d87c5296",
+                "size_in_bytes": 1899
+            },
+            {
+                "_path": "man/man3/io_uring_prep_cmd_getsockname.3",
+                "path_type": "hardlink",
+                "sha256": "eed532bd954b58c95e8b4e0ab045a8c566871ecd09a0a1c9b026c52f5196e2ec",
+                "sha256_in_prefix": "eed532bd954b58c95e8b4e0ab045a8c566871ecd09a0a1c9b026c52f5196e2ec",
+                "size_in_bytes": 2077
+            },
+            {
+                "_path": "man/man3/io_uring_prep_cmd_sock.3",
+                "path_type": "hardlink",
+                "sha256": "6f8ef156bbeaf27009f09d333ddfbb420e6ce90f7fc3c316f99e0b7f687206df",
+                "sha256_in_prefix": "6f8ef156bbeaf27009f09d333ddfbb420e6ce90f7fc3c316f99e0b7f687206df",
+                "size_in_bytes": 2923
+            },
+            {
+                "_path": "man/man3/io_uring_prep_connect.3",
+                "path_type": "hardlink",
+                "sha256": "14d7c29509f572fecdf1560068e6a590639d59fb106a93abebceccb333f8231a",
+                "sha256_in_prefix": "14d7c29509f572fecdf1560068e6a590639d59fb106a93abebceccb333f8231a",
+                "size_in_bytes": 1909
+            },
+            {
+                "_path": "man/man3/io_uring_prep_epoll_ctl.3",
+                "path_type": "hardlink",
+                "sha256": "204472aded86f143fd022bb4bddfe15e5c38038ae3287374f003920b890154bd",
+                "sha256_in_prefix": "204472aded86f143fd022bb4bddfe15e5c38038ae3287374f003920b890154bd",
+                "size_in_bytes": 1582
+            },
+            {
+                "_path": "man/man3/io_uring_prep_epoll_wait.3",
+                "path_type": "hardlink",
+                "sha256": "fa3fd859148038958bcf39978faa2ce352d29db8242db397c4ea841904738e48",
+                "sha256_in_prefix": "fa3fd859148038958bcf39978faa2ce352d29db8242db397c4ea841904738e48",
+                "size_in_bytes": 2011
+            },
+            {
+                "_path": "man/man3/io_uring_prep_fadvise.3",
+                "path_type": "hardlink",
+                "sha256": "9d30f5fece2c0b2ffdf6b2865f70df90098ef2af09465ee4d3cc83c5a262a741",
+                "sha256_in_prefix": "9d30f5fece2c0b2ffdf6b2865f70df90098ef2af09465ee4d3cc83c5a262a741",
+                "size_in_bytes": 2108
+            },
+            {
+                "_path": "man/man3/io_uring_prep_fadvise64.3",
+                "path_type": "hardlink",
+                "sha256": "9d30f5fece2c0b2ffdf6b2865f70df90098ef2af09465ee4d3cc83c5a262a741",
+                "sha256_in_prefix": "9d30f5fece2c0b2ffdf6b2865f70df90098ef2af09465ee4d3cc83c5a262a741",
+                "size_in_bytes": 2108
+            },
+            {
+                "_path": "man/man3/io_uring_prep_fallocate.3",
+                "path_type": "hardlink",
+                "sha256": "8344c97fdbd93f708c941f8960616130787e1902ca8b691a2965a251b1157ed7",
+                "sha256_in_prefix": "8344c97fdbd93f708c941f8960616130787e1902ca8b691a2965a251b1157ed7",
+                "size_in_bytes": 1420
+            },
+            {
+                "_path": "man/man3/io_uring_prep_fgetxattr.3",
+                "path_type": "hardlink",
+                "sha256": "f3c79c9947be00e3c511feddfa905eecde3cfa6b031e3a90f1380b06cab7d138",
+                "sha256_in_prefix": "f3c79c9947be00e3c511feddfa905eecde3cfa6b031e3a90f1380b06cab7d138",
+                "size_in_bytes": 1610
+            },
+            {
+                "_path": "man/man3/io_uring_prep_files_update.3",
+                "path_type": "hardlink",
+                "sha256": "26859d6242b8e1e48d03470e6814c1f3475d94fcce8814caf090a5b5c311d410",
+                "sha256_in_prefix": "26859d6242b8e1e48d03470e6814c1f3475d94fcce8814caf090a5b5c311d410",
+                "size_in_bytes": 2739
+            },
+            {
+                "_path": "man/man3/io_uring_prep_fixed_fd_install.3",
+                "path_type": "hardlink",
+                "sha256": "0907727dc11f641479d9ac5edaba80a56a0e766a3ae3eed7f3ccf658f5d9b9ed",
+                "sha256_in_prefix": "0907727dc11f641479d9ac5edaba80a56a0e766a3ae3eed7f3ccf658f5d9b9ed",
+                "size_in_bytes": 2419
+            },
+            {
+                "_path": "man/man3/io_uring_prep_fsetxattr.3",
+                "path_type": "hardlink",
+                "sha256": "13079a9598011191773832b559fe25684f092c21b63e621f8350e8cbe62aa974",
+                "sha256_in_prefix": "13079a9598011191773832b559fe25684f092c21b63e621f8350e8cbe62aa974",
+                "size_in_bytes": 1770
+            },
+            {
+                "_path": "man/man3/io_uring_prep_fsync.3",
+                "path_type": "hardlink",
+                "sha256": "5db1060a6aaa8eb2df6b7acc1bdee82ebe69d688ac0d61471a3048b10abe389b",
+                "sha256_in_prefix": "5db1060a6aaa8eb2df6b7acc1bdee82ebe69d688ac0d61471a3048b10abe389b",
+                "size_in_bytes": 1852
+            },
+            {
+                "_path": "man/man3/io_uring_prep_ftruncate.3",
+                "path_type": "hardlink",
+                "sha256": "8d640a51bd7b6d86affb17f09b7d9594fec9bc1f3719aaf9de6caea8a2a6d19f",
+                "sha256_in_prefix": "8d640a51bd7b6d86affb17f09b7d9594fec9bc1f3719aaf9de6caea8a2a6d19f",
+                "size_in_bytes": 1311
+            },
+            {
+                "_path": "man/man3/io_uring_prep_futex_wait.3",
+                "path_type": "hardlink",
+                "sha256": "fc37ed61a8dd97f09ce80e7b175d5e801ee8c464bfe40e7f282f3f196a54bb2c",
+                "sha256_in_prefix": "fc37ed61a8dd97f09ce80e7b175d5e801ee8c464bfe40e7f282f3f196a54bb2c",
+                "size_in_bytes": 2435
+            },
+            {
+                "_path": "man/man3/io_uring_prep_futex_waitv.3",
+                "path_type": "hardlink",
+                "sha256": "c6febf909965535328a7443b6db3e77ccac37319e551d5989a0fe05043d5b30f",
+                "sha256_in_prefix": "c6febf909965535328a7443b6db3e77ccac37319e551d5989a0fe05043d5b30f",
+                "size_in_bytes": 2063
+            },
+            {
+                "_path": "man/man3/io_uring_prep_futex_wake.3",
+                "path_type": "hardlink",
+                "sha256": "fe94470f536513046a499ffa617869a53d916495e0c79add219fa4c705cec7e0",
+                "sha256_in_prefix": "fe94470f536513046a499ffa617869a53d916495e0c79add219fa4c705cec7e0",
+                "size_in_bytes": 2138
+            },
+            {
+                "_path": "man/man3/io_uring_prep_getxattr.3",
+                "path_type": "hardlink",
+                "sha256": "f3c79c9947be00e3c511feddfa905eecde3cfa6b031e3a90f1380b06cab7d138",
+                "sha256_in_prefix": "f3c79c9947be00e3c511feddfa905eecde3cfa6b031e3a90f1380b06cab7d138",
+                "size_in_bytes": 1610
+            },
+            {
+                "_path": "man/man3/io_uring_prep_link.3",
+                "path_type": "hardlink",
+                "sha256": "c09d4066a625210ac9d4828b83da58f53d6a3a26ee97eb8cded90086f9cf08ce",
+                "sha256_in_prefix": "c09d4066a625210ac9d4828b83da58f53d6a3a26ee97eb8cded90086f9cf08ce",
+                "size_in_bytes": 2627
+            },
+            {
+                "_path": "man/man3/io_uring_prep_link_timeout.3",
+                "path_type": "hardlink",
+                "sha256": "1bd05c8cfa7a17b2c7b19d072b645e1865249534747f692e1b82c8d6df1ab2f2",
+                "sha256_in_prefix": "1bd05c8cfa7a17b2c7b19d072b645e1865249534747f692e1b82c8d6df1ab2f2",
+                "size_in_bytes": 2491
+            },
+            {
+                "_path": "man/man3/io_uring_prep_linkat.3",
+                "path_type": "hardlink",
+                "sha256": "c09d4066a625210ac9d4828b83da58f53d6a3a26ee97eb8cded90086f9cf08ce",
+                "sha256_in_prefix": "c09d4066a625210ac9d4828b83da58f53d6a3a26ee97eb8cded90086f9cf08ce",
+                "size_in_bytes": 2627
+            },
+            {
+                "_path": "man/man3/io_uring_prep_listen.3",
+                "path_type": "hardlink",
+                "sha256": "e80256389a4f5210213dbb8af4440180e864400514fdd815d7b391a3e1d05be5",
+                "sha256_in_prefix": "e80256389a4f5210213dbb8af4440180e864400514fdd815d7b391a3e1d05be5",
+                "size_in_bytes": 1321
+            },
+            {
+                "_path": "man/man3/io_uring_prep_madvise.3",
+                "path_type": "hardlink",
+                "sha256": "abaa701150be0bf5643b7ebc77c08a012967e56f655f6a4454d6cdf5b441d3a9",
+                "sha256_in_prefix": "abaa701150be0bf5643b7ebc77c08a012967e56f655f6a4454d6cdf5b441d3a9",
+                "size_in_bytes": 1977
+            },
+            {
+                "_path": "man/man3/io_uring_prep_madvise64.3",
+                "path_type": "hardlink",
+                "sha256": "abaa701150be0bf5643b7ebc77c08a012967e56f655f6a4454d6cdf5b441d3a9",
+                "sha256_in_prefix": "abaa701150be0bf5643b7ebc77c08a012967e56f655f6a4454d6cdf5b441d3a9",
+                "size_in_bytes": 1977
+            },
+            {
+                "_path": "man/man3/io_uring_prep_mkdir.3",
+                "path_type": "hardlink",
+                "sha256": "e80109b48098f77705b87f69dba6c33dff242ea4a5607e3d13821e35ce4de8a1",
+                "sha256_in_prefix": "e80109b48098f77705b87f69dba6c33dff242ea4a5607e3d13821e35ce4de8a1",
+                "size_in_bytes": 2331
+            },
+            {
+                "_path": "man/man3/io_uring_prep_mkdirat.3",
+                "path_type": "hardlink",
+                "sha256": "e80109b48098f77705b87f69dba6c33dff242ea4a5607e3d13821e35ce4de8a1",
+                "sha256_in_prefix": "e80109b48098f77705b87f69dba6c33dff242ea4a5607e3d13821e35ce4de8a1",
+                "size_in_bytes": 2331
+            },
+            {
+                "_path": "man/man3/io_uring_prep_msg_ring.3",
+                "path_type": "hardlink",
+                "sha256": "6a3127c9984320cca161f7b789e0832ec444769ec10ac342d4d57482f0221a7a",
+                "sha256_in_prefix": "6a3127c9984320cca161f7b789e0832ec444769ec10ac342d4d57482f0221a7a",
+                "size_in_bytes": 2665
+            },
+            {
+                "_path": "man/man3/io_uring_prep_msg_ring_cqe_flags.3",
+                "path_type": "hardlink",
+                "sha256": "6a3127c9984320cca161f7b789e0832ec444769ec10ac342d4d57482f0221a7a",
+                "sha256_in_prefix": "6a3127c9984320cca161f7b789e0832ec444769ec10ac342d4d57482f0221a7a",
+                "size_in_bytes": 2665
+            },
+            {
+                "_path": "man/man3/io_uring_prep_msg_ring_fd.3",
+                "path_type": "hardlink",
+                "sha256": "cc64d4c412a99bc842784bd4b7fc18b897fb2a89303978f34283a8abb13b7224",
+                "sha256_in_prefix": "cc64d4c412a99bc842784bd4b7fc18b897fb2a89303978f34283a8abb13b7224",
+                "size_in_bytes": 2434
+            },
+            {
+                "_path": "man/man3/io_uring_prep_msg_ring_fd_alloc.3",
+                "path_type": "hardlink",
+                "sha256": "cc64d4c412a99bc842784bd4b7fc18b897fb2a89303978f34283a8abb13b7224",
+                "sha256_in_prefix": "cc64d4c412a99bc842784bd4b7fc18b897fb2a89303978f34283a8abb13b7224",
+                "size_in_bytes": 2434
+            },
+            {
+                "_path": "man/man3/io_uring_prep_multishot_accept.3",
+                "path_type": "hardlink",
+                "sha256": "d8c7cbe813faf526ba8d83f2cbbc9b2ea577bed87efb4388a27e8e705bc01c13",
+                "sha256_in_prefix": "d8c7cbe813faf526ba8d83f2cbbc9b2ea577bed87efb4388a27e8e705bc01c13",
+                "size_in_bytes": 6903
+            },
+            {
+                "_path": "man/man3/io_uring_prep_multishot_accept_direct.3",
+                "path_type": "hardlink",
+                "sha256": "d8c7cbe813faf526ba8d83f2cbbc9b2ea577bed87efb4388a27e8e705bc01c13",
+                "sha256_in_prefix": "d8c7cbe813faf526ba8d83f2cbbc9b2ea577bed87efb4388a27e8e705bc01c13",
+                "size_in_bytes": 6903
+            },
+            {
+                "_path": "man/man3/io_uring_prep_nop.3",
+                "path_type": "hardlink",
+                "sha256": "39b8550958da2d6197b3bc6cd6986f9ccc577ecf643073e60ae02dc17ad2f8a5",
+                "sha256_in_prefix": "39b8550958da2d6197b3bc6cd6986f9ccc577ecf643073e60ae02dc17ad2f8a5",
+                "size_in_bytes": 604
+            },
+            {
+                "_path": "man/man3/io_uring_prep_nop128.3",
+                "path_type": "hardlink",
+                "sha256": "7db677723c5fa69526d4c56c5c4a392d0919566cc8a6c6a98cb174f838616e7e",
+                "sha256_in_prefix": "7db677723c5fa69526d4c56c5c4a392d0919566cc8a6c6a98cb174f838616e7e",
+                "size_in_bytes": 665
+            },
+            {
+                "_path": "man/man3/io_uring_prep_open.3",
+                "path_type": "hardlink",
+                "sha256": "ea387827ce9c2351af72b27d5740ddaa34700808572e74d5f7d8884f903e942c",
+                "sha256_in_prefix": "ea387827ce9c2351af72b27d5740ddaa34700808572e74d5f7d8884f903e942c",
+                "size_in_bytes": 4570
+            },
+            {
+                "_path": "man/man3/io_uring_prep_open_direct.3",
+                "path_type": "hardlink",
+                "sha256": "ea387827ce9c2351af72b27d5740ddaa34700808572e74d5f7d8884f903e942c",
+                "sha256_in_prefix": "ea387827ce9c2351af72b27d5740ddaa34700808572e74d5f7d8884f903e942c",
+                "size_in_bytes": 4570
+            },
+            {
+                "_path": "man/man3/io_uring_prep_openat.3",
+                "path_type": "hardlink",
+                "sha256": "ea387827ce9c2351af72b27d5740ddaa34700808572e74d5f7d8884f903e942c",
+                "sha256_in_prefix": "ea387827ce9c2351af72b27d5740ddaa34700808572e74d5f7d8884f903e942c",
+                "size_in_bytes": 4570
+            },
+            {
+                "_path": "man/man3/io_uring_prep_openat2.3",
+                "path_type": "hardlink",
+                "sha256": "0cb8dfa19906c464f84e616da6b02a41ee8d78aefed4fadd207dfa5bbd11ac7f",
+                "sha256_in_prefix": "0cb8dfa19906c464f84e616da6b02a41ee8d78aefed4fadd207dfa5bbd11ac7f",
+                "size_in_bytes": 3919
+            },
+            {
+                "_path": "man/man3/io_uring_prep_openat2_direct.3",
+                "path_type": "hardlink",
+                "sha256": "0cb8dfa19906c464f84e616da6b02a41ee8d78aefed4fadd207dfa5bbd11ac7f",
+                "sha256_in_prefix": "0cb8dfa19906c464f84e616da6b02a41ee8d78aefed4fadd207dfa5bbd11ac7f",
+                "size_in_bytes": 3919
+            },
+            {
+                "_path": "man/man3/io_uring_prep_openat_direct.3",
+                "path_type": "hardlink",
+                "sha256": "ea387827ce9c2351af72b27d5740ddaa34700808572e74d5f7d8884f903e942c",
+                "sha256_in_prefix": "ea387827ce9c2351af72b27d5740ddaa34700808572e74d5f7d8884f903e942c",
+                "size_in_bytes": 4570
+            },
+            {
+                "_path": "man/man3/io_uring_prep_pipe.3",
+                "path_type": "hardlink",
+                "sha256": "57927988b63b9bb0ee6e5f60708cc45d40e38bc14f20929d3ad6dd57c9633b85",
+                "sha256_in_prefix": "57927988b63b9bb0ee6e5f60708cc45d40e38bc14f20929d3ad6dd57c9633b85",
+                "size_in_bytes": 2697
+            },
+            {
+                "_path": "man/man3/io_uring_prep_pipe_direct.3",
+                "path_type": "hardlink",
+                "sha256": "57927988b63b9bb0ee6e5f60708cc45d40e38bc14f20929d3ad6dd57c9633b85",
+                "sha256_in_prefix": "57927988b63b9bb0ee6e5f60708cc45d40e38bc14f20929d3ad6dd57c9633b85",
+                "size_in_bytes": 2697
+            },
+            {
+                "_path": "man/man3/io_uring_prep_poll_add.3",
+                "path_type": "hardlink",
+                "sha256": "e54aa55f4847fbc78c43a8de54da4839ef8e210cbfaa159192422c1b083272eb",
+                "sha256_in_prefix": "e54aa55f4847fbc78c43a8de54da4839ef8e210cbfaa159192422c1b083272eb",
+                "size_in_bytes": 2264
+            },
+            {
+                "_path": "man/man3/io_uring_prep_poll_multishot.3",
+                "path_type": "hardlink",
+                "sha256": "e54aa55f4847fbc78c43a8de54da4839ef8e210cbfaa159192422c1b083272eb",
+                "sha256_in_prefix": "e54aa55f4847fbc78c43a8de54da4839ef8e210cbfaa159192422c1b083272eb",
+                "size_in_bytes": 2264
+            },
+            {
+                "_path": "man/man3/io_uring_prep_poll_remove.3",
+                "path_type": "hardlink",
+                "sha256": "2dca04f2f6054c7b7c814690328aa142ef094732523a370cef314874c899ae12",
+                "sha256_in_prefix": "2dca04f2f6054c7b7c814690328aa142ef094732523a370cef314874c899ae12",
+                "size_in_bytes": 1502
+            },
+            {
+                "_path": "man/man3/io_uring_prep_poll_update.3",
+                "path_type": "hardlink",
+                "sha256": "9fc3d4339b533380f4afba7f71b5efe9e7e9eaa6ffe240b9d77299072e2413af",
+                "sha256_in_prefix": "9fc3d4339b533380f4afba7f71b5efe9e7e9eaa6ffe240b9d77299072e2413af",
+                "size_in_bytes": 3115
+            },
+            {
+                "_path": "man/man3/io_uring_prep_provide_buffers.3",
+                "path_type": "hardlink",
+                "sha256": "5b9b9078582fbcabb8efd99a964a2bd9be04e7722167db58ad66678761e07024",
+                "sha256_in_prefix": "5b9b9078582fbcabb8efd99a964a2bd9be04e7722167db58ad66678761e07024",
+                "size_in_bytes": 4016
+            },
+            {
+                "_path": "man/man3/io_uring_prep_read.3",
+                "path_type": "hardlink",
+                "sha256": "d37a6e3e22247df1ff180cf4d288c9393234455bcead16d01434302ec7f78191",
+                "sha256_in_prefix": "d37a6e3e22247df1ff180cf4d288c9393234455bcead16d01434302ec7f78191",
+                "size_in_bytes": 1917
+            },
+            {
+                "_path": "man/man3/io_uring_prep_read_fixed.3",
+                "path_type": "hardlink",
+                "sha256": "7ec842451b3215cc53d108f0ba660bed7371d1e7169e87473eee99c28d29f5ba",
+                "sha256_in_prefix": "7ec842451b3215cc53d108f0ba660bed7371d1e7169e87473eee99c28d29f5ba",
+                "size_in_bytes": 1864
+            },
+            {
+                "_path": "man/man3/io_uring_prep_read_multishot.3",
+                "path_type": "hardlink",
+                "sha256": "fd24e5590cf6e1f2023bfca25977bd1fe71b386662858c08a7436119a857aaf4",
+                "sha256_in_prefix": "fd24e5590cf6e1f2023bfca25977bd1fe71b386662858c08a7436119a857aaf4",
+                "size_in_bytes": 2984
+            },
+            {
+                "_path": "man/man3/io_uring_prep_readv.3",
+                "path_type": "hardlink",
+                "sha256": "11cbc2c33ca0aceecd8efb7e684b194d24db66d967c64c11598f96703af03b88",
+                "sha256_in_prefix": "11cbc2c33ca0aceecd8efb7e684b194d24db66d967c64c11598f96703af03b88",
+                "size_in_bytes": 2693
+            },
+            {
+                "_path": "man/man3/io_uring_prep_readv2.3",
+                "path_type": "hardlink",
+                "sha256": "ee15715b487dd628468537f67b4b287815d3b8c14bb853d0769c37dc3c0f108e",
+                "sha256_in_prefix": "ee15715b487dd628468537f67b4b287815d3b8c14bb853d0769c37dc3c0f108e",
+                "size_in_bytes": 3096
+            },
+            {
+                "_path": "man/man3/io_uring_prep_readv_fixed.3",
+                "path_type": "hardlink",
+                "sha256": "75571e4031ee624ea32aab227a324b6018359ec9c7de8bb6e757e2c4c1f5846c",
+                "sha256_in_prefix": "75571e4031ee624ea32aab227a324b6018359ec9c7de8bb6e757e2c4c1f5846c",
+                "size_in_bytes": 1930
+            },
+            {
+                "_path": "man/man3/io_uring_prep_recv.3",
+                "path_type": "hardlink",
+                "sha256": "fdcf3175cd131e2afbfec05bda116834f6b98c8a598ffabddfed40ad07f04a50",
+                "sha256_in_prefix": "fdcf3175cd131e2afbfec05bda116834f6b98c8a598ffabddfed40ad07f04a50",
+                "size_in_bytes": 5098
+            },
+            {
+                "_path": "man/man3/io_uring_prep_recv_multishot.3",
+                "path_type": "hardlink",
+                "sha256": "fdcf3175cd131e2afbfec05bda116834f6b98c8a598ffabddfed40ad07f04a50",
+                "sha256_in_prefix": "fdcf3175cd131e2afbfec05bda116834f6b98c8a598ffabddfed40ad07f04a50",
+                "size_in_bytes": 5098
+            },
+            {
+                "_path": "man/man3/io_uring_prep_recvmsg.3",
+                "path_type": "hardlink",
+                "sha256": "ff0023bc90eca0b58c537198a3792be66a2e14383336c4f6474b9a7d19496283",
+                "sha256_in_prefix": "ff0023bc90eca0b58c537198a3792be66a2e14383336c4f6474b9a7d19496283",
+                "size_in_bytes": 4141
+            },
+            {
+                "_path": "man/man3/io_uring_prep_recvmsg_multishot.3",
+                "path_type": "hardlink",
+                "sha256": "ff0023bc90eca0b58c537198a3792be66a2e14383336c4f6474b9a7d19496283",
+                "sha256_in_prefix": "ff0023bc90eca0b58c537198a3792be66a2e14383336c4f6474b9a7d19496283",
+                "size_in_bytes": 4141
+            },
+            {
+                "_path": "man/man3/io_uring_prep_remove_buffers.3",
+                "path_type": "hardlink",
+                "sha256": "6a5586568e750b53e5fef55d0c1eb84e030ab1bb78fec6d9462aa6fcea71af4e",
+                "sha256_in_prefix": "6a5586568e750b53e5fef55d0c1eb84e030ab1bb78fec6d9462aa6fcea71af4e",
+                "size_in_bytes": 1305
+            },
+            {
+                "_path": "man/man3/io_uring_prep_rename.3",
+                "path_type": "hardlink",
+                "sha256": "a480f97fd9432772e029892976c268caa7858155869724fd30878961df0b4b52",
+                "sha256_in_prefix": "a480f97fd9432772e029892976c268caa7858155869724fd30878961df0b4b52",
+                "size_in_bytes": 2735
+            },
+            {
+                "_path": "man/man3/io_uring_prep_renameat.3",
+                "path_type": "hardlink",
+                "sha256": "a480f97fd9432772e029892976c268caa7858155869724fd30878961df0b4b52",
+                "sha256_in_prefix": "a480f97fd9432772e029892976c268caa7858155869724fd30878961df0b4b52",
+                "size_in_bytes": 2735
+            },
+            {
+                "_path": "man/man3/io_uring_prep_send.3",
+                "path_type": "hardlink",
+                "sha256": "6c7f3f0d2a87a0d06e4a3c20eb3f1ee76a1cb33fa13019e3d6bd35d5f12bb199",
+                "sha256_in_prefix": "6c7f3f0d2a87a0d06e4a3c20eb3f1ee76a1cb33fa13019e3d6bd35d5f12bb199",
+                "size_in_bytes": 6381
+            },
+            {
+                "_path": "man/man3/io_uring_prep_send_bundle.3",
+                "path_type": "hardlink",
+                "sha256": "6c7f3f0d2a87a0d06e4a3c20eb3f1ee76a1cb33fa13019e3d6bd35d5f12bb199",
+                "sha256_in_prefix": "6c7f3f0d2a87a0d06e4a3c20eb3f1ee76a1cb33fa13019e3d6bd35d5f12bb199",
+                "size_in_bytes": 6381
+            },
+            {
+                "_path": "man/man3/io_uring_prep_send_set_addr.3",
+                "path_type": "hardlink",
+                "sha256": "1897a539ce31f59365e24db8194e908feca26cad87d1c3e677b446c16d20c173",
+                "sha256_in_prefix": "1897a539ce31f59365e24db8194e908feca26cad87d1c3e677b446c16d20c173",
+                "size_in_bytes": 1006
+            },
+            {
+                "_path": "man/man3/io_uring_prep_send_zc.3",
+                "path_type": "hardlink",
+                "sha256": "b6bd4287c4de030ce6d8089be477c7efa46f6681abee12f1744dd393fdbc1066",
+                "sha256_in_prefix": "b6bd4287c4de030ce6d8089be477c7efa46f6681abee12f1744dd393fdbc1066",
+                "size_in_bytes": 3835
+            },
+            {
+                "_path": "man/man3/io_uring_prep_send_zc_fixed.3",
+                "path_type": "hardlink",
+                "sha256": "b6bd4287c4de030ce6d8089be477c7efa46f6681abee12f1744dd393fdbc1066",
+                "sha256_in_prefix": "b6bd4287c4de030ce6d8089be477c7efa46f6681abee12f1744dd393fdbc1066",
+                "size_in_bytes": 3835
+            },
+            {
+                "_path": "man/man3/io_uring_prep_sendmsg.3",
+                "path_type": "hardlink",
+                "sha256": "6c23281ac2ee3563e0ee64ae82f640fa3e0876edb110f73487a1157c9fa737b1",
+                "sha256_in_prefix": "6c23281ac2ee3563e0ee64ae82f640fa3e0876edb110f73487a1157c9fa737b1",
+                "size_in_bytes": 3748
+            },
+            {
+                "_path": "man/man3/io_uring_prep_sendmsg_zc.3",
+                "path_type": "hardlink",
+                "sha256": "6c23281ac2ee3563e0ee64ae82f640fa3e0876edb110f73487a1157c9fa737b1",
+                "sha256_in_prefix": "6c23281ac2ee3563e0ee64ae82f640fa3e0876edb110f73487a1157c9fa737b1",
+                "size_in_bytes": 3748
+            },
+            {
+                "_path": "man/man3/io_uring_prep_sendmsg_zc_fixed.3",
+                "path_type": "hardlink",
+                "sha256": "1094cf6cfb2d5742cd0ef50d409a4717a16564c77e4543a9bdaab7702b351ad4",
+                "sha256_in_prefix": "1094cf6cfb2d5742cd0ef50d409a4717a16564c77e4543a9bdaab7702b351ad4",
+                "size_in_bytes": 2033
+            },
+            {
+                "_path": "man/man3/io_uring_prep_sendto.3",
+                "path_type": "hardlink",
+                "sha256": "6c7f3f0d2a87a0d06e4a3c20eb3f1ee76a1cb33fa13019e3d6bd35d5f12bb199",
+                "sha256_in_prefix": "6c7f3f0d2a87a0d06e4a3c20eb3f1ee76a1cb33fa13019e3d6bd35d5f12bb199",
+                "size_in_bytes": 6381
+            },
+            {
+                "_path": "man/man3/io_uring_prep_setxattr.3",
+                "path_type": "hardlink",
+                "sha256": "13079a9598011191773832b559fe25684f092c21b63e621f8350e8cbe62aa974",
+                "sha256_in_prefix": "13079a9598011191773832b559fe25684f092c21b63e621f8350e8cbe62aa974",
+                "size_in_bytes": 1770
+            },
+            {
+                "_path": "man/man3/io_uring_prep_shutdown.3",
+                "path_type": "hardlink",
+                "sha256": "d0baf99381d29931d7fcff3c66f33eece48907a3aff9ebe90cf5c0a355f60887",
+                "sha256_in_prefix": "d0baf99381d29931d7fcff3c66f33eece48907a3aff9ebe90cf5c0a355f60887",
+                "size_in_bytes": 1255
+            },
+            {
+                "_path": "man/man3/io_uring_prep_socket.3",
+                "path_type": "hardlink",
+                "sha256": "23df8a9ff83e553e090391febaaa60954b1818acea1b91ac349ba5bee13f3695",
+                "sha256_in_prefix": "23df8a9ff83e553e090391febaaa60954b1818acea1b91ac349ba5bee13f3695",
+                "size_in_bytes": 3650
+            },
+            {
+                "_path": "man/man3/io_uring_prep_socket_direct.3",
+                "path_type": "hardlink",
+                "sha256": "23df8a9ff83e553e090391febaaa60954b1818acea1b91ac349ba5bee13f3695",
+                "sha256_in_prefix": "23df8a9ff83e553e090391febaaa60954b1818acea1b91ac349ba5bee13f3695",
+                "size_in_bytes": 3650
+            },
+            {
+                "_path": "man/man3/io_uring_prep_socket_direct_alloc.3",
+                "path_type": "hardlink",
+                "sha256": "23df8a9ff83e553e090391febaaa60954b1818acea1b91ac349ba5bee13f3695",
+                "sha256_in_prefix": "23df8a9ff83e553e090391febaaa60954b1818acea1b91ac349ba5bee13f3695",
+                "size_in_bytes": 3650
+            },
+            {
+                "_path": "man/man3/io_uring_prep_splice.3",
+                "path_type": "hardlink",
+                "sha256": "3a33b2cb328c2e98d29fb3b5d8a69e8913833c06dd81ab174985ede0bcbb8883",
+                "sha256_in_prefix": "3a33b2cb328c2e98d29fb3b5d8a69e8913833c06dd81ab174985ede0bcbb8883",
+                "size_in_bytes": 2639
+            },
+            {
+                "_path": "man/man3/io_uring_prep_statx.3",
+                "path_type": "hardlink",
+                "sha256": "7084d365ac04fa08250c8d48093d24e2b0453968330dc917515433dd4abba08e",
+                "sha256_in_prefix": "7084d365ac04fa08250c8d48093d24e2b0453968330dc917515433dd4abba08e",
+                "size_in_bytes": 2103
+            },
+            {
+                "_path": "man/man3/io_uring_prep_symlink.3",
+                "path_type": "hardlink",
+                "sha256": "7318bf47388c5358e180eedff13395b581cf68864a1cd0cd81db383f4967a5e9",
+                "sha256_in_prefix": "7318bf47388c5358e180eedff13395b581cf68864a1cd0cd81db383f4967a5e9",
+                "size_in_bytes": 2448
+            },
+            {
+                "_path": "man/man3/io_uring_prep_symlinkat.3",
+                "path_type": "hardlink",
+                "sha256": "7318bf47388c5358e180eedff13395b581cf68864a1cd0cd81db383f4967a5e9",
+                "sha256_in_prefix": "7318bf47388c5358e180eedff13395b581cf68864a1cd0cd81db383f4967a5e9",
+                "size_in_bytes": 2448
+            },
+            {
+                "_path": "man/man3/io_uring_prep_sync_file_range.3",
+                "path_type": "hardlink",
+                "sha256": "3cb34d0e864ca1c812f04515189973bd4477092d155950eb2ec2ab28703c0586",
+                "sha256_in_prefix": "3cb34d0e864ca1c812f04515189973bd4477092d155950eb2ec2ab28703c0586",
+                "size_in_bytes": 1513
+            },
+            {
+                "_path": "man/man3/io_uring_prep_tee.3",
+                "path_type": "hardlink",
+                "sha256": "d7b5f5c91cad8170c5225527a1031e890ecad6a7779718ed7cb73cd30c184e98",
+                "sha256_in_prefix": "d7b5f5c91cad8170c5225527a1031e890ecad6a7779718ed7cb73cd30c184e98",
+                "size_in_bytes": 1730
+            },
+            {
+                "_path": "man/man3/io_uring_prep_timeout.3",
+                "path_type": "hardlink",
+                "sha256": "41c55dd743bab8cc0aac62cec2f39aa43da437858ffe20e3999c3b7e01bca0f7",
+                "sha256_in_prefix": "41c55dd743bab8cc0aac62cec2f39aa43da437858ffe20e3999c3b7e01bca0f7",
+                "size_in_bytes": 3220
+            },
+            {
+                "_path": "man/man3/io_uring_prep_timeout_remove.3",
+                "path_type": "hardlink",
+                "sha256": "5356bafd33eef535cf516c437dd24b25dc9bb3525376ed2c074eacd021ee577a",
+                "sha256_in_prefix": "5356bafd33eef535cf516c437dd24b25dc9bb3525376ed2c074eacd021ee577a",
+                "size_in_bytes": 2935
+            },
+            {
+                "_path": "man/man3/io_uring_prep_timeout_update.3",
+                "path_type": "hardlink",
+                "sha256": "5356bafd33eef535cf516c437dd24b25dc9bb3525376ed2c074eacd021ee577a",
+                "sha256_in_prefix": "5356bafd33eef535cf516c437dd24b25dc9bb3525376ed2c074eacd021ee577a",
+                "size_in_bytes": 2935
+            },
+            {
+                "_path": "man/man3/io_uring_prep_unlink.3",
+                "path_type": "hardlink",
+                "sha256": "d1bc5a4f045a60223dff0dbd28525107d75e155e21e03cc6cef4c2dd2e72234d",
+                "sha256_in_prefix": "d1bc5a4f045a60223dff0dbd28525107d75e155e21e03cc6cef4c2dd2e72234d",
+                "size_in_bytes": 2370
+            },
+            {
+                "_path": "man/man3/io_uring_prep_unlinkat.3",
+                "path_type": "hardlink",
+                "sha256": "d1bc5a4f045a60223dff0dbd28525107d75e155e21e03cc6cef4c2dd2e72234d",
+                "sha256_in_prefix": "d1bc5a4f045a60223dff0dbd28525107d75e155e21e03cc6cef4c2dd2e72234d",
+                "size_in_bytes": 2370
+            },
+            {
+                "_path": "man/man3/io_uring_prep_uring_cmd.3",
+                "path_type": "hardlink",
+                "sha256": "0651c0e6cf6b5832bfbc92decde46cc05b78c5aa1877435bc2c8b7348da6f368",
+                "sha256_in_prefix": "0651c0e6cf6b5832bfbc92decde46cc05b78c5aa1877435bc2c8b7348da6f368",
+                "size_in_bytes": 984
+            },
+            {
+                "_path": "man/man3/io_uring_prep_uring_cmd128.3",
+                "path_type": "hardlink",
+                "sha256": "ac9fe203f4edbc2958c472c70658dfeb4b6b481175abd02a868f27415e5077b6",
+                "sha256_in_prefix": "ac9fe203f4edbc2958c472c70658dfeb4b6b481175abd02a868f27415e5077b6",
+                "size_in_bytes": 1031
+            },
+            {
+                "_path": "man/man3/io_uring_prep_waitid.3",
+                "path_type": "hardlink",
+                "sha256": "b01e42180486cccab546ef30db3d87859ae1cf5833846207b87443aa60a1bb43",
+                "sha256_in_prefix": "b01e42180486cccab546ef30db3d87859ae1cf5833846207b87443aa60a1bb43",
+                "size_in_bytes": 1660
+            },
+            {
+                "_path": "man/man3/io_uring_prep_write.3",
+                "path_type": "hardlink",
+                "sha256": "68aca5ffabf9a31c6ae681e8fc6f1fa3ee8cb1491052cb4434d27d10279f1ea6",
+                "sha256_in_prefix": "68aca5ffabf9a31c6ae681e8fc6f1fa3ee8cb1491052cb4434d27d10279f1ea6",
+                "size_in_bytes": 1880
+            },
+            {
+                "_path": "man/man3/io_uring_prep_write_fixed.3",
+                "path_type": "hardlink",
+                "sha256": "0e011f4e69d6c3b0d4ef7b1cf03916ece83a1f05053fe68e9780ec5d134ce2a9",
+                "sha256_in_prefix": "0e011f4e69d6c3b0d4ef7b1cf03916ece83a1f05053fe68e9780ec5d134ce2a9",
+                "size_in_bytes": 1875
+            },
+            {
+                "_path": "man/man3/io_uring_prep_writev.3",
+                "path_type": "hardlink",
+                "sha256": "4ec61b7bef7cf11f7148e8acd822b15269feb80f75d1a4fc51b706d77dcb7799",
+                "sha256_in_prefix": "4ec61b7bef7cf11f7148e8acd822b15269feb80f75d1a4fc51b706d77dcb7799",
+                "size_in_bytes": 2711
+            },
+            {
+                "_path": "man/man3/io_uring_prep_writev2.3",
+                "path_type": "hardlink",
+                "sha256": "8fc0db2c191b92d767d38dd93c40ef2924e6c0464cc1eb42a82d3fcf011e1121",
+                "sha256_in_prefix": "8fc0db2c191b92d767d38dd93c40ef2924e6c0464cc1eb42a82d3fcf011e1121",
+                "size_in_bytes": 3115
+            },
+            {
+                "_path": "man/man3/io_uring_prep_writev_fixed.3",
+                "path_type": "hardlink",
+                "sha256": "764be7ddfde45daa16104f1771dce29eda807db4a1355fc11f377946c4602130",
+                "sha256_in_prefix": "764be7ddfde45daa16104f1771dce29eda807db4a1355fc11f377946c4602130",
+                "size_in_bytes": 1949
+            },
+            {
+                "_path": "man/man3/io_uring_queue_exit.3",
+                "path_type": "hardlink",
+                "sha256": "8ef8d23e321336a11e12318393152be06516e8f31c9ce85222bcfe75c9744684",
+                "sha256_in_prefix": "8ef8d23e321336a11e12318393152be06516e8f31c9ce85222bcfe75c9744684",
+                "size_in_bytes": 764
+            },
+            {
+                "_path": "man/man3/io_uring_queue_init.3",
+                "path_type": "hardlink",
+                "sha256": "b04ff51bfee451b774a478b34d979e290b39fcbd904c6a6a8f8f98b03c902af7",
+                "sha256_in_prefix": "b04ff51bfee451b774a478b34d979e290b39fcbd904c6a6a8f8f98b03c902af7",
+                "size_in_bytes": 4219
+            },
+            {
+                "_path": "man/man3/io_uring_queue_init_mem.3",
+                "path_type": "hardlink",
+                "sha256": "b04ff51bfee451b774a478b34d979e290b39fcbd904c6a6a8f8f98b03c902af7",
+                "sha256_in_prefix": "b04ff51bfee451b774a478b34d979e290b39fcbd904c6a6a8f8f98b03c902af7",
+                "size_in_bytes": 4219
+            },
+            {
+                "_path": "man/man3/io_uring_queue_init_params.3",
+                "path_type": "hardlink",
+                "sha256": "b04ff51bfee451b774a478b34d979e290b39fcbd904c6a6a8f8f98b03c902af7",
+                "sha256_in_prefix": "b04ff51bfee451b774a478b34d979e290b39fcbd904c6a6a8f8f98b03c902af7",
+                "size_in_bytes": 4219
+            },
+            {
+                "_path": "man/man3/io_uring_queue_mmap.3",
+                "path_type": "hardlink",
+                "sha256": "d844b37feef9c03059667d4dc1628e746b8e021854a1e33ae7fda8bfd46cfa25",
+                "sha256_in_prefix": "d844b37feef9c03059667d4dc1628e746b8e021854a1e33ae7fda8bfd46cfa25",
+                "size_in_bytes": 1241
+            },
+            {
+                "_path": "man/man3/io_uring_recvmsg_cmsg_firsthdr.3",
+                "path_type": "hardlink",
+                "sha256": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "sha256_in_prefix": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "size_in_bytes": 2855
+            },
+            {
+                "_path": "man/man3/io_uring_recvmsg_cmsg_nexthdr.3",
+                "path_type": "hardlink",
+                "sha256": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "sha256_in_prefix": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "size_in_bytes": 2855
+            },
+            {
+                "_path": "man/man3/io_uring_recvmsg_name.3",
+                "path_type": "hardlink",
+                "sha256": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "sha256_in_prefix": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "size_in_bytes": 2855
+            },
+            {
+                "_path": "man/man3/io_uring_recvmsg_out.3",
+                "path_type": "hardlink",
+                "sha256": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "sha256_in_prefix": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "size_in_bytes": 2855
+            },
+            {
+                "_path": "man/man3/io_uring_recvmsg_payload.3",
+                "path_type": "hardlink",
+                "sha256": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "sha256_in_prefix": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "size_in_bytes": 2855
+            },
+            {
+                "_path": "man/man3/io_uring_recvmsg_payload_length.3",
+                "path_type": "hardlink",
+                "sha256": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "sha256_in_prefix": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "size_in_bytes": 2855
+            },
+            {
+                "_path": "man/man3/io_uring_recvmsg_validate.3",
+                "path_type": "hardlink",
+                "sha256": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "sha256_in_prefix": "822ee32d85969790b0c7130bedc1f08de783ef545a4f99e8eb7d9711513f2034",
+                "size_in_bytes": 2855
+            },
+            {
+                "_path": "man/man3/io_uring_register_buf_ring.3",
+                "path_type": "hardlink",
+                "sha256": "08f4dd780c62ba9773418734d759802c05f44d46325c0045c4770442b29e5f48",
+                "sha256_in_prefix": "08f4dd780c62ba9773418734d759802c05f44d46325c0045c4770442b29e5f48",
+                "size_in_bytes": 4046
+            },
+            {
+                "_path": "man/man3/io_uring_register_buffers.3",
+                "path_type": "hardlink",
+                "sha256": "8dc4bcd4f90c369742e9acaad60cec2c2052c53f64e303db801f29813f96a378",
+                "sha256_in_prefix": "8dc4bcd4f90c369742e9acaad60cec2c2052c53f64e303db801f29813f96a378",
+                "size_in_bytes": 3292
+            },
+            {
+                "_path": "man/man3/io_uring_register_buffers_sparse.3",
+                "path_type": "hardlink",
+                "sha256": "8dc4bcd4f90c369742e9acaad60cec2c2052c53f64e303db801f29813f96a378",
+                "sha256_in_prefix": "8dc4bcd4f90c369742e9acaad60cec2c2052c53f64e303db801f29813f96a378",
+                "size_in_bytes": 3292
+            },
+            {
+                "_path": "man/man3/io_uring_register_buffers_tags.3",
+                "path_type": "hardlink",
+                "sha256": "8dc4bcd4f90c369742e9acaad60cec2c2052c53f64e303db801f29813f96a378",
+                "sha256_in_prefix": "8dc4bcd4f90c369742e9acaad60cec2c2052c53f64e303db801f29813f96a378",
+                "size_in_bytes": 3292
+            },
+            {
+                "_path": "man/man3/io_uring_register_buffers_update_tag.3",
+                "path_type": "hardlink",
+                "sha256": "8dc4bcd4f90c369742e9acaad60cec2c2052c53f64e303db801f29813f96a378",
+                "sha256_in_prefix": "8dc4bcd4f90c369742e9acaad60cec2c2052c53f64e303db801f29813f96a378",
+                "size_in_bytes": 3292
+            },
+            {
+                "_path": "man/man3/io_uring_register_clock.3",
+                "path_type": "hardlink",
+                "sha256": "dc2c3b5eac518604e6dbbaaf179f2c21a66b59a75e504bc2dd0c5cc279eb625d",
+                "sha256_in_prefix": "dc2c3b5eac518604e6dbbaaf179f2c21a66b59a75e504bc2dd0c5cc279eb625d",
+                "size_in_bytes": 1640
+            },
+            {
+                "_path": "man/man3/io_uring_register_eventfd.3",
+                "path_type": "hardlink",
+                "sha256": "f276fc88be900cb151d5e81d6f69ecaa0a6d99b9872238383333f3eb044a9ae1",
+                "sha256_in_prefix": "f276fc88be900cb151d5e81d6f69ecaa0a6d99b9872238383333f3eb044a9ae1",
+                "size_in_bytes": 1752
+            },
+            {
+                "_path": "man/man3/io_uring_register_eventfd_async.3",
+                "path_type": "hardlink",
+                "sha256": "f276fc88be900cb151d5e81d6f69ecaa0a6d99b9872238383333f3eb044a9ae1",
+                "sha256_in_prefix": "f276fc88be900cb151d5e81d6f69ecaa0a6d99b9872238383333f3eb044a9ae1",
+                "size_in_bytes": 1752
+            },
+            {
+                "_path": "man/man3/io_uring_register_file_alloc_range.3",
+                "path_type": "hardlink",
+                "sha256": "f978b1a39c0c13a2cd5bcbcc15b0667fa45cbe92691bf8c66714b51709aa9c43",
+                "sha256_in_prefix": "f978b1a39c0c13a2cd5bcbcc15b0667fa45cbe92691bf8c66714b51709aa9c43",
+                "size_in_bytes": 1774
+            },
+            {
+                "_path": "man/man3/io_uring_register_files.3",
+                "path_type": "hardlink",
+                "sha256": "d2cc8a306a009bd76d0aacb23c792b5538704ab6c7624e677e7381ab11c7c6d4",
+                "sha256_in_prefix": "d2cc8a306a009bd76d0aacb23c792b5538704ab6c7624e677e7381ab11c7c6d4",
+                "size_in_bytes": 3823
+            },
+            {
+                "_path": "man/man3/io_uring_register_files_sparse.3",
+                "path_type": "hardlink",
+                "sha256": "d2cc8a306a009bd76d0aacb23c792b5538704ab6c7624e677e7381ab11c7c6d4",
+                "sha256_in_prefix": "d2cc8a306a009bd76d0aacb23c792b5538704ab6c7624e677e7381ab11c7c6d4",
+                "size_in_bytes": 3823
+            },
+            {
+                "_path": "man/man3/io_uring_register_files_tags.3",
+                "path_type": "hardlink",
+                "sha256": "d2cc8a306a009bd76d0aacb23c792b5538704ab6c7624e677e7381ab11c7c6d4",
+                "sha256_in_prefix": "d2cc8a306a009bd76d0aacb23c792b5538704ab6c7624e677e7381ab11c7c6d4",
+                "size_in_bytes": 3823
+            },
+            {
+                "_path": "man/man3/io_uring_register_files_update.3",
+                "path_type": "hardlink",
+                "sha256": "d2cc8a306a009bd76d0aacb23c792b5538704ab6c7624e677e7381ab11c7c6d4",
+                "sha256_in_prefix": "d2cc8a306a009bd76d0aacb23c792b5538704ab6c7624e677e7381ab11c7c6d4",
+                "size_in_bytes": 3823
+            },
+            {
+                "_path": "man/man3/io_uring_register_files_update_tag.3",
+                "path_type": "hardlink",
+                "sha256": "d2cc8a306a009bd76d0aacb23c792b5538704ab6c7624e677e7381ab11c7c6d4",
+                "sha256_in_prefix": "d2cc8a306a009bd76d0aacb23c792b5538704ab6c7624e677e7381ab11c7c6d4",
+                "size_in_bytes": 3823
+            },
+            {
+                "_path": "man/man3/io_uring_register_ifq.3",
+                "path_type": "hardlink",
+                "sha256": "103a37a44141bdddb882eb71b9f34a3261afd53032bea4dcd8cbe4f776cc8c38",
+                "sha256_in_prefix": "103a37a44141bdddb882eb71b9f34a3261afd53032bea4dcd8cbe4f776cc8c38",
+                "size_in_bytes": 1325
+            },
+            {
+                "_path": "man/man3/io_uring_register_iowq_aff.3",
+                "path_type": "hardlink",
+                "sha256": "1a34b9d594d73f89ea556294728c6c9cd7a8bd4b8b7fe2ae1b531f5dc3d857a3",
+                "sha256_in_prefix": "1a34b9d594d73f89ea556294728c6c9cd7a8bd4b8b7fe2ae1b531f5dc3d857a3",
+                "size_in_bytes": 1814
+            },
+            {
+                "_path": "man/man3/io_uring_register_iowq_max_workers.3",
+                "path_type": "hardlink",
+                "sha256": "49260efaf01d13009987d27cee74fbb72909638d0e738633eb7ecaa23f210b63",
+                "sha256_in_prefix": "49260efaf01d13009987d27cee74fbb72909638d0e738633eb7ecaa23f210b63",
+                "size_in_bytes": 2219
+            },
+            {
+                "_path": "man/man3/io_uring_register_napi.3",
+                "path_type": "hardlink",
+                "sha256": "91554d0269128a85c37dfc5acc89fd3b02b7399fee60bee422efea5bbb88cd12",
+                "sha256_in_prefix": "91554d0269128a85c37dfc5acc89fd3b02b7399fee60bee422efea5bbb88cd12",
+                "size_in_bytes": 1127
+            },
+            {
+                "_path": "man/man3/io_uring_register_personality.3",
+                "path_type": "hardlink",
+                "sha256": "67831baf67fbbe370635373d9948441517f36a63c867e58a01ce9c6caf1e276f",
+                "sha256_in_prefix": "67831baf67fbbe370635373d9948441517f36a63c867e58a01ce9c6caf1e276f",
+                "size_in_bytes": 1056
+            },
+            {
+                "_path": "man/man3/io_uring_register_probe.3",
+                "path_type": "hardlink",
+                "sha256": "be12ec19166e4e6f9e66a7cc8afda8b7476b2a0e6185245db1b442db6d84414a",
+                "sha256_in_prefix": "be12ec19166e4e6f9e66a7cc8afda8b7476b2a0e6185245db1b442db6d84414a",
+                "size_in_bytes": 1391
+            },
+            {
+                "_path": "man/man3/io_uring_register_region.3",
+                "path_type": "hardlink",
+                "sha256": "b91ba4c9b464dd41080d318095adc7363cc8c4bbcafbeb255d34c93a4623f317",
+                "sha256_in_prefix": "b91ba4c9b464dd41080d318095adc7363cc8c4bbcafbeb255d34c93a4623f317",
+                "size_in_bytes": 2825
+            },
+            {
+                "_path": "man/man3/io_uring_register_restrictions.3",
+                "path_type": "hardlink",
+                "sha256": "7da97338ba441ea78169c1b5f7892f1298eb49b49b776090b2f16c18645d934f",
+                "sha256_in_prefix": "7da97338ba441ea78169c1b5f7892f1298eb49b49b776090b2f16c18645d934f",
+                "size_in_bytes": 1527
+            },
+            {
+                "_path": "man/man3/io_uring_register_ring_fd.3",
+                "path_type": "hardlink",
+                "sha256": "90b6e29830a0794262d2786fff20118b0233f2ace4e065d88ae5d3540a8b586d",
+                "sha256_in_prefix": "90b6e29830a0794262d2786fff20118b0233f2ace4e065d88ae5d3540a8b586d",
+                "size_in_bytes": 1766
+            },
+            {
+                "_path": "man/man3/io_uring_register_sync_cancel.3",
+                "path_type": "hardlink",
+                "sha256": "eb09dc9d3bb5d74d9cc758f6f1aa434dbfcbe5b7f81b225ff47933d4c055c369",
+                "sha256_in_prefix": "eb09dc9d3bb5d74d9cc758f6f1aa434dbfcbe5b7f81b225ff47933d4c055c369",
+                "size_in_bytes": 1789
+            },
+            {
+                "_path": "man/man3/io_uring_register_sync_msg.3",
+                "path_type": "hardlink",
+                "sha256": "3a28428bb88b82c3449ac0a1e9418e751d05cbcc028a747ff484a0a12ba7f137",
+                "sha256_in_prefix": "3a28428bb88b82c3449ac0a1e9418e751d05cbcc028a747ff484a0a12ba7f137",
+                "size_in_bytes": 2475
+            },
+            {
+                "_path": "man/man3/io_uring_register_wait_reg.3",
+                "path_type": "hardlink",
+                "sha256": "b676722bb7b53fcd2f61ba43e9c6854701fbf11b648ae645814d456ed7b5ffcb",
+                "sha256_in_prefix": "b676722bb7b53fcd2f61ba43e9c6854701fbf11b648ae645814d456ed7b5ffcb",
+                "size_in_bytes": 1292
+            },
+            {
+                "_path": "man/man3/io_uring_resize_rings.3",
+                "path_type": "hardlink",
+                "sha256": "4e2cfe0e346d0af6be9999e4a990c7d3fcd3f8c25eab9897e77c98bf2ea3e1aa",
+                "sha256_in_prefix": "4e2cfe0e346d0af6be9999e4a990c7d3fcd3f8c25eab9897e77c98bf2ea3e1aa",
+                "size_in_bytes": 3152
+            },
+            {
+                "_path": "man/man3/io_uring_ring_dontfork.3",
+                "path_type": "hardlink",
+                "sha256": "a553babb1d209679204272b4eccf6df00f916b7f9ac1fd8b28076586451dda95",
+                "sha256_in_prefix": "a553babb1d209679204272b4eccf6df00f916b7f9ac1fd8b28076586451dda95",
+                "size_in_bytes": 1001
+            },
+            {
+                "_path": "man/man3/io_uring_set_iowait.3",
+                "path_type": "hardlink",
+                "sha256": "8bee6a74f87e2b03e1dd29f31ebc7104cd2d02d9449d47f27152277a1b710976",
+                "sha256_in_prefix": "8bee6a74f87e2b03e1dd29f31ebc7104cd2d02d9449d47f27152277a1b710976",
+                "size_in_bytes": 1593
+            },
+            {
+                "_path": "man/man3/io_uring_setup_buf_ring.3",
+                "path_type": "hardlink",
+                "sha256": "7b51fb19ba444affd9687c58e492f1237fa87647d956d8529eec9e0e7d4b83ac",
+                "sha256_in_prefix": "7b51fb19ba444affd9687c58e492f1237fa87647d956d8529eec9e0e7d4b83ac",
+                "size_in_bytes": 3027
+            },
+            {
+                "_path": "man/man3/io_uring_sq_ready.3",
+                "path_type": "hardlink",
+                "sha256": "1ef4a600b0c59cd5b4140444093b6bf5b4554aea771d07dd92d006797a0aa59e",
+                "sha256_in_prefix": "1ef4a600b0c59cd5b4140444093b6bf5b4554aea771d07dd92d006797a0aa59e",
+                "size_in_bytes": 896
+            },
+            {
+                "_path": "man/man3/io_uring_sq_space_left.3",
+                "path_type": "hardlink",
+                "sha256": "c1e8403c57f7fedd12159925d5ab637174da59ca14b1b9b120226c6e6ad58cff",
+                "sha256_in_prefix": "c1e8403c57f7fedd12159925d5ab637174da59ca14b1b9b120226c6e6ad58cff",
+                "size_in_bytes": 625
+            },
+            {
+                "_path": "man/man3/io_uring_sqe_set_buf_group.3",
+                "path_type": "hardlink",
+                "sha256": "a89996a6b0df369f3a0e5141035ab32480db76fced942af6802969414f8a1dc3",
+                "sha256_in_prefix": "a89996a6b0df369f3a0e5141035ab32480db76fced942af6802969414f8a1dc3",
+                "size_in_bytes": 850
+            },
+            {
+                "_path": "man/man3/io_uring_sqe_set_data.3",
+                "path_type": "hardlink",
+                "sha256": "a5830275de86b134cc723a3870cdbc1d4c5ae33117f88396c987df02425ff9ce",
+                "sha256_in_prefix": "a5830275de86b134cc723a3870cdbc1d4c5ae33117f88396c987df02425ff9ce",
+                "size_in_bytes": 1553
+            },
+            {
+                "_path": "man/man3/io_uring_sqe_set_data64.3",
+                "path_type": "hardlink",
+                "sha256": "a5830275de86b134cc723a3870cdbc1d4c5ae33117f88396c987df02425ff9ce",
+                "sha256_in_prefix": "a5830275de86b134cc723a3870cdbc1d4c5ae33117f88396c987df02425ff9ce",
+                "size_in_bytes": 1553
+            },
+            {
+                "_path": "man/man3/io_uring_sqe_set_flags.3",
+                "path_type": "hardlink",
+                "sha256": "49febe08b2c06735773e3f1284419e524378b896704b131fd2406d34fe5f0572",
+                "sha256_in_prefix": "49febe08b2c06735773e3f1284419e524378b896704b131fd2406d34fe5f0572",
+                "size_in_bytes": 3519
+            },
+            {
+                "_path": "man/man3/io_uring_sqring_wait.3",
+                "path_type": "hardlink",
+                "sha256": "c767d2cb3be0ddcb624257924708bd0b42801189d037c7856d4281bed106c695",
+                "sha256_in_prefix": "c767d2cb3be0ddcb624257924708bd0b42801189d037c7856d4281bed106c695",
+                "size_in_bytes": 1017
+            },
+            {
+                "_path": "man/man3/io_uring_submit.3",
+                "path_type": "hardlink",
+                "sha256": "118ab6972705903ac8d3d0ea17567aa7fa75f555b42561b095bc70174a403f36",
+                "sha256_in_prefix": "118ab6972705903ac8d3d0ea17567aa7fa75f555b42561b095bc70174a403f36",
+                "size_in_bytes": 1919
+            },
+            {
+                "_path": "man/man3/io_uring_submit_and_get_events.3",
+                "path_type": "hardlink",
+                "sha256": "63d9a2b3d8897e886ddf05e0616371a6472824285de1956b3041a9fd5bc7c55a",
+                "sha256_in_prefix": "63d9a2b3d8897e886ddf05e0616371a6472824285de1956b3041a9fd5bc7c55a",
+                "size_in_bytes": 968
+            },
+            {
+                "_path": "man/man3/io_uring_submit_and_wait.3",
+                "path_type": "hardlink",
+                "sha256": "5db7da012709a4b39deaa48e2276be814960988e776bb69b1bb1bb7fbfe63096",
+                "sha256_in_prefix": "5db7da012709a4b39deaa48e2276be814960988e776bb69b1bb1bb7fbfe63096",
+                "size_in_bytes": 1329
+            },
+            {
+                "_path": "man/man3/io_uring_submit_and_wait_min_timeout.3",
+                "path_type": "hardlink",
+                "sha256": "b4ce7bcd57fddd07b13a2828e6680bf8dc24bb294d40d576a5f07632e6f7a3f4",
+                "sha256_in_prefix": "b4ce7bcd57fddd07b13a2828e6680bf8dc24bb294d40d576a5f07632e6f7a3f4",
+                "size_in_bytes": 3971
+            },
+            {
+                "_path": "man/man3/io_uring_submit_and_wait_reg.3",
+                "path_type": "hardlink",
+                "sha256": "47792e8155197ec5f02d10178ff485cd13bcf0ff657553296ca485b35feebfa9",
+                "sha256_in_prefix": "47792e8155197ec5f02d10178ff485cd13bcf0ff657553296ca485b35feebfa9",
+                "size_in_bytes": 2117
+            },
+            {
+                "_path": "man/man3/io_uring_submit_and_wait_timeout.3",
+                "path_type": "hardlink",
+                "sha256": "df3421093135a6b235b47f0ca4d3348954112f438366189ad4e00c27ecf10be3",
+                "sha256_in_prefix": "df3421093135a6b235b47f0ca4d3348954112f438366189ad4e00c27ecf10be3",
+                "size_in_bytes": 2294
+            },
+            {
+                "_path": "man/man3/io_uring_unregister_buf_ring.3",
+                "path_type": "hardlink",
+                "sha256": "9b90f67343352c32370a4eabcdd731186c2d6a542f335d0eb228072740fcf8ce",
+                "sha256_in_prefix": "9b90f67343352c32370a4eabcdd731186c2d6a542f335d0eb228072740fcf8ce",
+                "size_in_bytes": 794
+            },
+            {
+                "_path": "man/man3/io_uring_unregister_buffers.3",
+                "path_type": "hardlink",
+                "sha256": "79cd70d58ee6c522bfd38d3d0613b38efb520102a516e0a43253fe77ba72ead5",
+                "sha256_in_prefix": "79cd70d58ee6c522bfd38d3d0613b38efb520102a516e0a43253fe77ba72ead5",
+                "size_in_bytes": 692
+            },
+            {
+                "_path": "man/man3/io_uring_unregister_eventfd.3",
+                "path_type": "hardlink",
+                "sha256": "f276fc88be900cb151d5e81d6f69ecaa0a6d99b9872238383333f3eb044a9ae1",
+                "sha256_in_prefix": "f276fc88be900cb151d5e81d6f69ecaa0a6d99b9872238383333f3eb044a9ae1",
+                "size_in_bytes": 1752
+            },
+            {
+                "_path": "man/man3/io_uring_unregister_files.3",
+                "path_type": "hardlink",
+                "sha256": "91191fd7d4f57c246e3ea76672f8b0908722a9d949ba25844d543d5e1959da0f",
+                "sha256_in_prefix": "91191fd7d4f57c246e3ea76672f8b0908722a9d949ba25844d543d5e1959da0f",
+                "size_in_bytes": 664
+            },
+            {
+                "_path": "man/man3/io_uring_unregister_iowq_aff.3",
+                "path_type": "hardlink",
+                "sha256": "1a34b9d594d73f89ea556294728c6c9cd7a8bd4b8b7fe2ae1b531f5dc3d857a3",
+                "sha256_in_prefix": "1a34b9d594d73f89ea556294728c6c9cd7a8bd4b8b7fe2ae1b531f5dc3d857a3",
+                "size_in_bytes": 1814
+            },
+            {
+                "_path": "man/man3/io_uring_unregister_napi.3",
+                "path_type": "hardlink",
+                "sha256": "971b767627f195c80ec1c13a82d6c7a2bcd2a131bee2a9342923e9ea7f38a038",
+                "sha256_in_prefix": "971b767627f195c80ec1c13a82d6c7a2bcd2a131bee2a9342923e9ea7f38a038",
+                "size_in_bytes": 748
+            },
+            {
+                "_path": "man/man3/io_uring_unregister_personality.3",
+                "path_type": "hardlink",
+                "sha256": "a8b66644c34fcd4f6e5d932da685d6dc2cb87c3229faf4204459dd0f91f9dd6d",
+                "sha256_in_prefix": "a8b66644c34fcd4f6e5d932da685d6dc2cb87c3229faf4204459dd0f91f9dd6d",
+                "size_in_bytes": 965
+            },
+            {
+                "_path": "man/man3/io_uring_unregister_ring_fd.3",
+                "path_type": "hardlink",
+                "sha256": "395f3b32ee22881ee5461916f0b0f078ccb2ad6246615196004fa58d679d1c5a",
+                "sha256_in_prefix": "395f3b32ee22881ee5461916f0b0f078ccb2ad6246615196004fa58d679d1c5a",
+                "size_in_bytes": 977
+            },
+            {
+                "_path": "man/man3/io_uring_wait_cqe.3",
+                "path_type": "hardlink",
+                "sha256": "095430866aec40dc240cb0a427edc9cce8a6f385a8571878df8dc9a7e9ef32cd",
+                "sha256_in_prefix": "095430866aec40dc240cb0a427edc9cce8a6f385a8571878df8dc9a7e9ef32cd",
+                "size_in_bytes": 1203
+            },
+            {
+                "_path": "man/man3/io_uring_wait_cqe_nr.3",
+                "path_type": "hardlink",
+                "sha256": "9e13be0263b4c19758f1c45421e4eda62fd22ce41b68ca758888199b51495335",
+                "sha256_in_prefix": "9e13be0263b4c19758f1c45421e4eda62fd22ce41b68ca758888199b51495335",
+                "size_in_bytes": 1535
+            },
+            {
+                "_path": "man/man3/io_uring_wait_cqe_timeout.3",
+                "path_type": "hardlink",
+                "sha256": "e30e54b17b277d113c14d740935dc6a76ae5aac3c61e09f5e5cafb4290183923",
+                "sha256_in_prefix": "e30e54b17b277d113c14d740935dc6a76ae5aac3c61e09f5e5cafb4290183923",
+                "size_in_bytes": 1684
+            },
+            {
+                "_path": "man/man3/io_uring_wait_cqes.3",
+                "path_type": "hardlink",
+                "sha256": "5429350abe45732920e3ba7a1689af6b4dad83d0674e5ee95ed7912f58fd6613",
+                "sha256_in_prefix": "5429350abe45732920e3ba7a1689af6b4dad83d0674e5ee95ed7912f58fd6613",
+                "size_in_bytes": 2017
+            },
+            {
+                "_path": "man/man3/io_uring_wait_cqes_min_timeout.3",
+                "path_type": "hardlink",
+                "sha256": "43b5ca9d48b727c60e83a14ec580b73ed69557321e574123ff5cad32064d0505",
+                "sha256_in_prefix": "43b5ca9d48b727c60e83a14ec580b73ed69557321e574123ff5cad32064d0505",
+                "size_in_bytes": 2184
+            },
+            {
+                "_path": "man/man7/io_uring.7",
+                "path_type": "hardlink",
+                "sha256": "a7bc666d6993e58c561c7e9cdc968ee3554e5e25cc1268d4167c8861ab83fd3d",
+                "sha256_in_prefix": "a7bc666d6993e58c561c7e9cdc968ee3554e5e25cc1268d4167c8861ab83fd3d",
+                "size_in_bytes": 29152
+            },
+            {
+                "_path": "man/man7/io_uring_cancelation.7",
+                "path_type": "hardlink",
+                "sha256": "b4b3b508a88bad2fc5896900b9cadbb81e9a00d444d612f02d58945f7a85166d",
+                "sha256_in_prefix": "b4b3b508a88bad2fc5896900b9cadbb81e9a00d444d612f02d58945f7a85166d",
+                "size_in_bytes": 8430
+            },
+            {
+                "_path": "man/man7/io_uring_linked_requests.7",
+                "path_type": "hardlink",
+                "sha256": "109dc4fa876e7863b3041ef0915bc53100972cc0c133581f175bcb848160358a",
+                "sha256_in_prefix": "109dc4fa876e7863b3041ef0915bc53100972cc0c133581f175bcb848160358a",
+                "size_in_bytes": 7454
+            },
+            {
+                "_path": "man/man7/io_uring_multishot.7",
+                "path_type": "hardlink",
+                "sha256": "eee1231692b366b2947c110626905651b94991a512c7679000089f841fab6339",
+                "sha256_in_prefix": "eee1231692b366b2947c110626905651b94991a512c7679000089f841fab6339",
+                "size_in_bytes": 7663
+            },
+            {
+                "_path": "man/man7/io_uring_provided_buffers.7",
+                "path_type": "hardlink",
+                "sha256": "a0576170b2e0b131596b276c3573acb8791fc221d5f230b08118991fdb3d303d",
+                "sha256_in_prefix": "a0576170b2e0b131596b276c3573acb8791fc221d5f230b08118991fdb3d303d",
+                "size_in_bytes": 8274
+            },
+            {
+                "_path": "man/man7/io_uring_registered_buffers.7",
+                "path_type": "hardlink",
+                "sha256": "db72e395ca54145d5419c9e36ff35337921979818fd5894a3a2141ba929b442a",
+                "sha256_in_prefix": "db72e395ca54145d5419c9e36ff35337921979818fd5894a3a2141ba929b442a",
+                "size_in_bytes": 7254
+            },
+            {
+                "_path": "man/man7/io_uring_registered_files.7",
+                "path_type": "hardlink",
+                "sha256": "6cfae7d416d4aae1258446b49d7751ccf90db014aeaedc9914b8a844e0b7b726",
+                "sha256_in_prefix": "6cfae7d416d4aae1258446b49d7751ccf90db014aeaedc9914b8a844e0b7b726",
+                "size_in_bytes": 7158
+            },
+            {
+                "_path": "man/man7/io_uring_setup_flags.7",
+                "path_type": "hardlink",
+                "sha256": "16902e53c55d72b91dcbd1ad0b2feab5442956c1ed12ad44c7760270f71d731c",
+                "sha256_in_prefix": "16902e53c55d72b91dcbd1ad0b2feab5442956c1ed12ad44c7760270f71d731c",
+                "size_in_bytes": 12746
+            },
+            {
+                "_path": "man/man7/io_uring_sqpoll.7",
+                "path_type": "hardlink",
+                "sha256": "ebdd8f98067b3f8e628f519b2a3ad47e3304fb22da4a19b329ca79bf144e48e0",
+                "sha256_in_prefix": "ebdd8f98067b3f8e628f519b2a3ad47e3304fb22da4a19b329ca79bf144e48e0",
+                "size_in_bytes": 8028
+            }
+        ],
+        "paths_version": 1
+    },
+    "platform": "linux",
+    "requested_spec": "",
+    "sha256": "7584dc478a34e50c5dc0e0ceac4cb9819ff352bc3a5d0cbb001b974dab9a0967",
+    "size": 155011,
+    "subdir": "linux-aarch64",
+    "timestamp": 1770567701,
+    "url": "https://conda.anaconda.org/conda-forge/linux-aarch64/liburing-2.14-hfefdfc9_0.conda",
+    "version": "2.14"
+}

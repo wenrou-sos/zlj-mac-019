@@ -1,0 +1,57 @@
+{
+    "arch": "aarch64",
+    "build": "h8acb6b2_4",
+    "build_number": 4,
+    "build_string": "h8acb6b2_4",
+    "channel": "conda-forge",
+    "constrains": [],
+    "depends": [],
+    "extracted_package_dir": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/libgomp-16.2.0-h8acb6b2_4",
+    "files": [
+        "lib/libgomp.so",
+        "lib/libgomp.so.1.0.0",
+        "share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION.gomp_copy"
+    ],
+    "fn": "libgomp-16.2.0-h8acb6b2_4.conda",
+    "license": "GPL-3.0-only WITH GCC-exception-3.1",
+    "link": {
+        "source": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/libgomp-16.2.0-h8acb6b2_4",
+        "type": 1
+    },
+    "md5": "727c19b26cd43140e4a90a6f8f1cc31a",
+    "name": "libgomp",
+    "package_tarball_full_path": "/home/node/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-aarch64/libgomp-16.2.0-h8acb6b2_4.tar.bz2",
+    "paths_data": {
+        "paths": [
+            {
+                "_path": "lib/libgomp.so",
+                "path_type": "softlink",
+                "sha256_in_prefix": "6d5641419eef35b697f19139df8da4948846ffdc225a21ae2832c549230b30e9",
+                "size_in_bytes": 1709752
+            },
+            {
+                "_path": "lib/libgomp.so.1.0.0",
+                "path_type": "hardlink",
+                "sha256": "6d5641419eef35b697f19139df8da4948846ffdc225a21ae2832c549230b30e9",
+                "sha256_in_prefix": "6d5641419eef35b697f19139df8da4948846ffdc225a21ae2832c549230b30e9",
+                "size_in_bytes": 1709752
+            },
+            {
+                "_path": "share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION.gomp_copy",
+                "path_type": "hardlink",
+                "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+                "sha256_in_prefix": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+                "size_in_bytes": 3324
+            }
+        ],
+        "paths_version": 1
+    },
+    "platform": "linux",
+    "requested_spec": "",
+    "sha256": "6d216e6dc9a158b920f6e0c1dfdd6d77575bf79420dadf85d64576298ecb4503",
+    "size": 617987,
+    "subdir": "linux-aarch64",
+    "timestamp": 1787617685,
+    "url": "https://conda.anaconda.org/conda-forge/linux-aarch64/libgomp-16.2.0-h8acb6b2_4.conda",
+    "version": "16.2.0"
+}
