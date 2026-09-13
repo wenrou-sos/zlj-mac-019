@@ -71,6 +71,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
+import dayjs from 'dayjs'
 import api from '../api'
 import { VAT_STATUS } from '../status'
 
@@ -95,12 +96,19 @@ async function load() {
 
 function openSchedule(vat) {
   current.value = vat
-  form.value = { machine: null, range: null }
+  // 预填：明天 08:00 ~ 18:00，便于直接微调
+  const start = dayjs().add(1, 'day').hour(8).minute(0).second(0)
+  form.value = {
+    machine: null,
+    range: [start.format('YYYY-MM-DDTHH:mm:ss'), start.add(10, 'hour').format('YYYY-MM-DDTHH:mm:ss')],
+  }
   dialogVisible.value = true
 }
 
 async function save() {
-  if (!form.value.machine || !form.value.range?.length === 2) return ElMessage.warning('请选择机台和计划时间')
+  if (!form.value.machine || !form.value.range || form.value.range.length !== 2) {
+    return ElMessage.warning('请选择机台和计划时间')
+  }
   saving.value = true
   try {
     await api.scheduleVat(current.value.id, {

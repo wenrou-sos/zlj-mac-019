@@ -1,5 +1,6 @@
 from django.db.models import Count, Sum
 from django.utils import timezone
+from django.utils.dateparse import parse_datetime
 from rest_framework import status, viewsets
 from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
@@ -67,6 +68,13 @@ class MachineViewSet(viewsets.ModelViewSet):
 class DyeVatViewSet(viewsets.ModelViewSet):
     queryset = DyeVat.objects.select_related("order", "machine").prefetch_related("steps").all()
 
+    def perform_create(self, serializer):
+        """新建缸号时补齐默认工艺参数与 9 道标准工序"""
+        vat = serializer.save()
+        ProcessParameter.objects.create(vat=vat)
+        for i, (step, _) in enumerate(ProcessStep.STEP_CHOICES):
+            ProcessStep.objects.create(vat=vat, step=step, seq=i)
+
     def get_serializer_class(self):
         if self.action == "retrieve":
             return DyeVatDetailSerializer
@@ -87,10 +95,18 @@ class DyeVatViewSet(viewsets.ModelViewSet):
         """排缸：指定机台与计划时间，带冲突校验"""
         vat = self.get_object()
         machine_id = request.data.get("machine")
-        planned_start = request.data.get("planned_start")
-        planned_end = request.data.get("planned_end")
-        if not all([machine_id, planned_start, planned_end]):
+        planned_start = parse_datetime(str(request.data.get("planned_start") or ""))
+        planned_end = parse_datetime(str(request.data.get("planned_end") or ""))
+        if not machine_id or not planned_start or not planned_end:
             return Response({"detail": "机台、计划开始/结束时间必填"}, status=status.HTTP_400_BAD_REQUEST)
+        if timezone.is_naive(planned_start):
+            planned_start = timezone.make_aware(planned_start)
+        if timezone.is_naive(planned_end):
+            planned_end = timezone.make_aware(planned_end)
+        if planned_end <= planned_start:
+            return Response({"detail": "计划结束时间必须晚于开始时间"}, status=status.HTTP_400_BAD_REQUEST)
+        if not Machine.objects.filter(pk=machine_id, is_active=True).exists():
+            return Response({"detail": "机台不存在或已停用"}, status=status.HTTP_400_BAD_REQUEST)
         conflict = (
             DyeVat.objects.filter(machine_id=machine_id, status__in=["scheduled", "producing"])
             .exclude(pk=vat.pk)
@@ -167,8 +183,16 @@ class QualityIssueViewSet(viewsets.ModelViewSet):
     serializer_class = QualityIssueSerializer
 
     def perform_create(self, serializer):
-        count = QualityIssue.objects.count() + 1
-        serializer.save(issue_no=f"QI{timezone.now():%Y%m%d}-{count:03d}")
+        # 取当日最大序号 +1，删除历史单后也不会撞唯一约束
+        today = timezone.now().strftime("%Y%m%d")
+        last = (
+            QualityIssue.objects.filter(issue_no__startswith=f"QI{today}")
+            .order_by("-issue_no")
+            .values_list("issue_no", flat=True)
+            .first()
+        )
+        seq = int(last.rsplit("-", 1)[-1]) + 1 if last else 1
+        serializer.save(issue_no=f"QI{today}-{seq:03d}")
 
     @action(detail=True, methods=["post"])
     def transition(self, request, pk=None):
