@@ -3,8 +3,18 @@
     <el-row :gutter="20" v-if="vat">
       <el-col :span="11">
         <div class="section-title">
-          <b>工艺参数</b>
-          <el-button size="small" type="primary" link icon="Edit" @click="editParams">编辑</el-button>
+          <span>
+            <b>工艺参数</b>
+            <el-tooltip v-if="vat.params?.template_name" content="本缸套用该模板后的快照值，模板后续改动不影响本缸" placement="top">
+              <el-tag size="small" type="success" style="margin-left: 8px">执行模板：{{ vat.params.template_name }}</el-tag>
+            </el-tooltip>
+          </span>
+          <span>
+            <el-button size="small" link type="primary" @click="openApply">套用模板</el-button>
+            <el-button size="small" link type="primary" @click="openCopy">复制配方</el-button>
+            <el-button size="small" link type="success" @click="openSaveTpl">存为模板</el-button>
+            <el-button size="small" type="primary" link icon="Edit" @click="editParams">编辑</el-button>
+          </span>
         </div>
         <template v-if="vat.params">
           <el-descriptions :column="2" border size="small">
@@ -82,6 +92,43 @@
         <el-button type="primary" @click="saveParams">保存</el-button>
       </template>
     </el-dialog>
+    <el-dialog v-model="applyDialog" title="套用工艺模板" width="440px" append-to-body>
+      <el-alert type="info" :closable="false" title="套用为值快照：本缸参数被覆盖为模板当前值，之后模板改动不影响本缸"
+        style="margin-bottom: 12px" />
+      <el-select v-model="applyTplId" filterable style="width: 100%" placeholder="选择模板">
+        <el-option v-for="t in templates" :key="t.id" :value="t.id"
+          :label="`${t.name}（${t.fabric_type} ${t.dye_temp}℃）`" />
+      </el-select>
+      <template #footer>
+        <el-button @click="applyDialog = false">取消</el-button>
+        <el-button type="primary" @click="doApply">套用</el-button>
+      </template>
+    </el-dialog>
+
+    <el-dialog v-model="copyDialog" title="从缸号复制配方" width="440px" append-to-body>
+      <el-select v-model="copySrcId" filterable style="width: 100%" placeholder="选择来源缸号">
+        <el-option v-for="v in otherVats" :key="v.id" :value="v.id"
+          :label="`${v.vat_no}（${v.order_no} ${v.color}）`" />
+      </el-select>
+      <template #footer>
+        <el-button @click="copyDialog = false">取消</el-button>
+        <el-button type="primary" @click="doCopy">复制</el-button>
+      </template>
+    </el-dialog>
+
+    <el-dialog v-model="saveTplDialog" title="将本缸工艺存为模板" width="480px" append-to-body>
+      <el-form label-width="90px">
+        <el-form-item label="模板名称" required><el-input v-model="saveTplForm.name" /></el-form-item>
+        <el-form-item label="适用布种" required><el-input v-model="saveTplForm.fabric_type" /></el-form-item>
+        <el-form-item label="颜色"><el-input v-model="saveTplForm.color" /></el-form-item>
+        <el-form-item label="色号"><el-input v-model="saveTplForm.color_no" /></el-form-item>
+        <el-form-item label="客户确认样"><el-input v-model="saveTplForm.customer" placeholder="确认样编号（选填）" /></el-form-item>
+      </el-form>
+      <template #footer>
+        <el-button @click="saveTplDialog = false">取消</el-button>
+        <el-button type="success" @click="doSaveTpl">保存模板</el-button>
+      </template>
+    </el-dialog>
   </div>
 </template>
 
@@ -97,6 +144,14 @@ const vat = ref(null)
 const loading = ref(false)
 const paramDialog = ref(false)
 const paramForm = ref(null)
+const applyDialog = ref(false)
+const copyDialog = ref(false)
+const saveTplDialog = ref(false)
+const templates = ref([])
+const otherVats = ref([])
+const applyTplId = ref(null)
+const copySrcId = ref(null)
+const saveTplForm = ref({ name: '', fabric_type: '', color: '', color_no: '', customer: '' })
 
 const activeStep = computed(() => (vat.value ? vat.value.steps.filter((s) => s.status === 'done').length : 0))
 
@@ -148,6 +203,67 @@ async function abnormal(step) {
   ElMessage.warning('已标记异常')
   load()
   emit('changed')
+}
+
+async function openApply() {
+  const res = await api.templates()
+  templates.value = res.data
+  applyTplId.value = null
+  applyDialog.value = true
+}
+
+async function doApply() {
+  if (!applyTplId.value) return ElMessage.warning('请选择模板')
+  await api.applyTemplate(props.vatId, applyTplId.value)
+  ElMessage.success('模板已套用，可继续单缸微调')
+  applyDialog.value = false
+  load()
+  emit('changed')
+}
+
+async function openCopy() {
+  const res = await api.vats()
+  otherVats.value = res.data.filter((v) => v.id !== props.vatId)
+  copySrcId.value = null
+  copyDialog.value = true
+}
+
+async function doCopy() {
+  if (!copySrcId.value) return ElMessage.warning('请选择来源缸号')
+  await api.copyParams(props.vatId, copySrcId.value)
+  ElMessage.success('配方已复制')
+  copyDialog.value = false
+  load()
+  emit('changed')
+}
+
+function openSaveTpl() {
+  if (!vat.value?.params) return ElMessage.warning('本缸暂无工艺参数')
+  saveTplForm.value = {
+    name: `${vat.value.fabric_type}-${vat.value.color}${vat.value.color_no || ''}`,
+    fabric_type: vat.value.fabric_type || '',
+    color: vat.value.color || '',
+    color_no: vat.value.color_no || '',
+    customer: '',
+  }
+  saveTplDialog.value = true
+}
+
+async function doSaveTpl() {
+  if (!saveTplForm.value.name || !saveTplForm.value.fabric_type) return ElMessage.warning('模板名称和适用布种必填')
+  const p = vat.value.params
+  try {
+    await api.createTemplate({
+      ...saveTplForm.value,
+      bath_ratio: p.bath_ratio, dye_temp: p.dye_temp, dye_time: p.dye_time,
+      ph_value: p.ph_value, heating_rate: p.heating_rate,
+      dyes: p.dyes, auxiliaries: p.auxiliaries, note: p.note,
+    })
+    ElMessage.success('已存为模板')
+    saveTplDialog.value = false
+  } catch (e) {
+    ElMessage.error(e.response?.data ? JSON.stringify(e.response.data) : '保存失败')
+  }
 }
 
 watch(() => props.vatId, load, { immediate: true })

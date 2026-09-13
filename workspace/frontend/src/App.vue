@@ -10,6 +10,7 @@
         <el-menu-item index="/"><el-icon><Monitor /></el-icon>生产仪表盘</el-menu-item>
         <el-menu-item index="/orders"><el-icon><Document /></el-icon>订单管理</el-menu-item>
         <el-menu-item index="/scheduling"><el-icon><Calendar /></el-icon>排缸安排</el-menu-item>
+        <el-menu-item index="/templates"><el-icon><Collection /></el-icon>工艺模板</el-menu-item>
         <el-menu-item index="/progress"><el-icon><Loading /></el-icon>工序进度</el-menu-item>
         <el-menu-item index="/issues"><el-icon><Warning /></el-icon>质量异常</el-menu-item>
         <el-menu-item index="/reworks"><el-icon><RefreshLeft /></el-icon>返修跟踪</el-menu-item>

@@ -139,10 +139,15 @@ class DyeVatViewSet(viewsets.ModelViewSet):
         return (machine, planned_start, planned_end), None
 
     def _next_slot(self, vat, machine, duration, after):
-        """在该机台 after 之后找第一个能容纳 duration 的空档"""
+        """在该机台 after 之后找第一个能容纳 duration 的空档（跳过缺计划时间的缸号）"""
         cursor = after
         bookings = (
-            machine.vats.filter(status__in=["scheduled", "producing"], planned_end__gt=after)
+            machine.vats.filter(
+                status__in=["scheduled", "producing"],
+                planned_start__isnull=False,
+                planned_end__isnull=False,
+                planned_end__gt=after,
+            )
             .exclude(pk=vat.pk)
             .order_by("planned_start")
         )
@@ -161,7 +166,12 @@ class DyeVatViewSet(viewsets.ModelViewSet):
             "merge_suggestions": [],
         }
         conflict = (
-            DyeVat.objects.filter(machine=machine, status__in=["scheduled", "producing"])
+            DyeVat.objects.filter(
+                machine=machine,
+                status__in=["scheduled", "producing"],
+                planned_start__isnull=False,
+                planned_end__isnull=False,
+            )
             .exclude(pk=vat.pk)
             .filter(planned_start__lt=planned_end, planned_end__gt=planned_start)
             .order_by("planned_start")
@@ -173,7 +183,7 @@ class DyeVatViewSet(viewsets.ModelViewSet):
                 f"~{timezone.localtime(conflict.planned_end):%H:%M}）时段重叠"
             )
             ns, ne = self._next_slot(vat, machine, planned_end - planned_start, planned_start)
-            info["next_available"] = [ns, ne]
+            info["next_available"] = [timezone.localtime(ns), timezone.localtime(ne)]
         # 拼缸建议：同布种同色号的待排缸，合缸不超容
         if vat.order.color_no:
             others = DyeVat.objects.filter(

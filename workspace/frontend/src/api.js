@@ -17,8 +17,17 @@ export default {
   vats: (params) => api.get('/vats/', { params }),
   vat: (id) => api.get(`/vats/${id}/`),
   createVat: (data) => api.post('/vats/', data),
+  updateVat: (id, data) => api.patch(`/vats/${id}/`, data),
   scheduleVat: (id, data) => api.post(`/vats/${id}/schedule/`, data),
+  scheduleCheck: (id, data) => api.post(`/vats/${id}/schedule_check/`, data),
   unscheduleVat: (id) => api.post(`/vats/${id}/unschedule/`),
+  applyTemplate: (id, template) => api.post(`/vats/${id}/apply_template/`, { template }),
+  copyParams: (id, source) => api.post(`/vats/${id}/copy_params/`, { source }),
+  // 工艺模板
+  templates: () => api.get('/templates/'),
+  createTemplate: (data) => api.post('/templates/', data),
+  updateTemplate: (id, data) => api.put(`/templates/${id}/`, data),
+  deleteTemplate: (id) => api.delete(`/templates/${id}/`),
   // 工艺参数
   updateParams: (id, data) => api.put(`/params/${id}/`, data),
   // 工序
