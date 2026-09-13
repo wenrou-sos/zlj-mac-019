@@ -4,12 +4,20 @@
       <el-col :span="6">
         <el-card shadow="never">
           <template #header><b>待排缸（{{ unscheduled.length }}）</b></template>
-          <div v-for="v in unscheduled" :key="v.id" class="vat-item">
+          <div v-for="v in sortedUnscheduled" :key="v.id" class="vat-item" :class="{ urgent: v.order_priority !== 'normal' }">
             <div>
               <b>{{ v.vat_no }}</b>
               <el-tag size="small" style="margin-left: 6px">{{ v.color }}</el-tag>
+              <el-tag v-if="v.order_priority !== 'normal'" size="small" effect="dark"
+                :type="v.order_priority === 'critical' ? 'danger' : 'warning'" style="margin-left: 4px">
+                {{ v.order_priority_display }}
+              </el-tag>
               <div style="color: #909399; font-size: 12px; margin-top: 4px">
                 {{ v.order_no }} · {{ v.fabric_type }} · {{ v.weight_kg }} kg
+              </div>
+              <div style="font-size: 12px; margin-top: 2px"
+                :style="{ color: deliveryUrgent(v.order_delivery) ? '#f56c6c' : '#909399' }">
+                交期 {{ v.order_delivery }}<span v-if="deliveryUrgent(v.order_delivery)">（临近/已过）</span>
               </div>
             </div>
             <el-button size="small" type="primary" @click="openSchedule(v)">排缸</el-button>
@@ -38,6 +46,9 @@
                       </template>
                       <el-icon color="#f56c6c" style="vertical-align: -2px; margin-left: 4px"><WarningFilled /></el-icon>
                     </el-tooltip>
+                    <el-tooltip v-if="v.delay_info?.delayed" :content="v.delay_info.reason" placement="top">
+                      <el-tag size="small" type="danger" effect="plain" style="margin-left: 4px">落后</el-tag>
+                    </el-tooltip>
                   </span>
                   <el-tag size="small" :type="VAT_STATUS[v.status]?.type">{{ v.status_display }}</el-tag>
                 </div>
@@ -57,6 +68,10 @@
     </el-row>
 
     <el-dialog v-model="dialogVisible" :title="`排缸 - ${current?.vat_no || ''}（${current?.weight_kg ?? ''}kg）`" width="560px">
+      <el-alert v-if="current && current.order_priority !== 'normal'" class="urgent-alert"
+        :type="current.order_priority === 'critical' ? 'error' : 'warning'" show-icon :closable="false"
+        :title="`该缸属于${current.order_priority_display}订单，交期 ${current.order_delivery}，请优先安排`"
+        style="margin-bottom: 12px" />
       <el-form label-width="90px">
         <el-form-item label="机台" required>
           <el-select v-model="form.machine" style="width: 100%">
@@ -105,7 +120,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import dayjs from 'dayjs'
 import api from '../api'
@@ -122,6 +137,19 @@ const form = ref({ machine: null, range: null })
 const check = ref({ warnings: [], conflict: null, next_available: null, merge_suggestions: [] })
 
 const fmt = (t) => dayjs(t).format('MM-DD HH:mm')
+
+const PRIORITY_ORDER = { critical: 0, urgent: 1, normal: 2 }
+
+// 待排缸：加急/特急优先，同级按交期升序
+const sortedUnscheduled = computed(() =>
+  [...unscheduled.value].sort((a, b) => {
+    const p = (PRIORITY_ORDER[a.order_priority] ?? 2) - (PRIORITY_ORDER[b.order_priority] ?? 2)
+    return p !== 0 ? p : String(a.order_delivery).localeCompare(String(b.order_delivery))
+  })
+)
+
+// 交期临近（<=2天）或已过
+const deliveryUrgent = (d) => d && dayjs(d).diff(dayjs().startOf('day'), 'day') <= 2
 
 async function load() {
   const [b, u, m] = await Promise.all([
@@ -228,6 +256,7 @@ onMounted(load)
 
 <style scoped>
 .vat-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; border: 1px solid #e4e7ed; border-radius: 6px; margin-bottom: 8px; }
+.vat-item.urgent { border-left: 4px solid #f56c6c; background: #fef0f0; }
 .machine-card { min-height: 300px; }
 .scheduled-item { border: 1px solid #e4e7ed; border-left: 4px solid #409eff; border-radius: 6px; padding: 10px; margin-bottom: 8px; }
 .scheduled-item.producing { border-left-color: #e6a23c; background: #fdf6ec; }

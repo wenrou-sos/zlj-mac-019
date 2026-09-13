@@ -32,7 +32,7 @@ from .serializers import (
 
 
 class OrderViewSet(viewsets.ModelViewSet):
-    queryset = Order.objects.prefetch_related("vats").all()
+    queryset = Order.objects.prefetch_related("vats__steps", "vats__issues__reworks").all()
 
     def get_serializer_class(self):
         if self.action == "retrieve":
@@ -59,7 +59,7 @@ class MachineViewSet(viewsets.ModelViewSet):
         """排缸看板：每个机台及其已排缸号"""
         data = []
         for m in self.get_queryset().filter(is_active=True):
-            vats = m.vats.filter(status__in=["scheduled", "producing"]).order_by("planned_start")
+            vats = m.vats.filter(status__in=["scheduled", "producing"]).prefetch_related("steps").order_by("planned_start")
             data.append(
                 {
                     "machine": MachineSerializer(m).data,

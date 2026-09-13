@@ -23,6 +23,14 @@
         </el-descriptions>
       </el-card>
 
+      <el-alert v-if="order.risk && order.risk.level !== 'ok'" style="margin-top: 16px" show-icon :closable="false"
+        :type="order.risk.level === 'overdue' ? 'error' : 'warning'"
+        :title="order.risk.level === 'overdue' ? '订单已拖期' : '订单有拖期风险'">
+        <template #default>
+          <div v-for="(r, i) in order.risk.reasons" :key="i" style="font-size: 13px">{{ r }}</div>
+        </template>
+      </el-alert>
+
       <el-card shadow="never" style="margin-top: 16px">
         <template #header>
           <div style="display: flex; justify-content: space-between; align-items: center">
@@ -46,6 +54,9 @@
                     <div v-for="(w, i) in v.schedule_warnings" :key="i">{{ w }}</div>
                   </template>
                   <el-icon color="#f56c6c"><WarningFilled /></el-icon>
+                </el-tooltip>
+                <el-tooltip v-if="v.delay_info?.delayed" :content="v.delay_info.reason" placement="top">
+                  <el-tag size="small" type="danger" effect="plain">落后</el-tag>
                 </el-tooltip>
                 <el-progress :percentage="pct(v)" :stroke-width="8" style="width: 180px" />
               </div>

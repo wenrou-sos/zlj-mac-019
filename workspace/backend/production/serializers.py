@@ -11,6 +11,7 @@ from .models import (
     ReworkRecord,
     compute_schedule_warnings,
 )
+from .risk import order_risk_info, vat_delay_info
 
 
 class ProcessTemplateSerializer(serializers.ModelSerializer):
@@ -52,9 +53,13 @@ class DyeVatListSerializer(serializers.ModelSerializer):
     fabric_type = serializers.CharField(source="order.fabric_type", read_only=True)
     machine_name = serializers.CharField(source="machine.name", read_only=True, default=None)
     status_display = serializers.CharField(source="get_status_display", read_only=True)
+    order_priority = serializers.CharField(source="order.priority", read_only=True)
+    order_priority_display = serializers.CharField(source="order.get_priority_display", read_only=True)
+    order_delivery = serializers.DateField(source="order.delivery_date", read_only=True)
     done_steps = serializers.SerializerMethodField()
     total_steps = serializers.SerializerMethodField()
     schedule_warnings = serializers.SerializerMethodField()
+    delay_info = serializers.SerializerMethodField()
 
     class Meta:
         model = DyeVat
@@ -72,6 +77,10 @@ class DyeVatListSerializer(serializers.ModelSerializer):
             return []
         return compute_schedule_warnings(obj, obj.machine)
 
+    def get_delay_info(self, obj):
+        # 动态计算：落后计划标记随工序推进/排缸调整自动刷新
+        return vat_delay_info(obj)
+
 
 class DyeVatDetailSerializer(DyeVatListSerializer):
     params = ProcessParameterSerializer(read_only=True)
@@ -83,6 +92,7 @@ class OrderSerializer(serializers.ModelSerializer):
     priority_display = serializers.CharField(source="get_priority_display", read_only=True)
     vat_count = serializers.IntegerField(source="vats.count", read_only=True)
     produced_kg = serializers.SerializerMethodField()
+    risk = serializers.SerializerMethodField()
 
     class Meta:
         model = Order
@@ -90,6 +100,10 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def get_produced_kg(self, obj):
         return sum(v.weight_kg for v in obj.vats.all() if v.status == "completed")
+
+    def get_risk(self, obj):
+        # 实时计算：随排缸调整、工序推进、异常处理自动刷新
+        return order_risk_info(obj)
 
 
 class OrderDetailSerializer(OrderSerializer):

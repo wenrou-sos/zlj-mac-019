@@ -25,6 +25,19 @@
           <template #default="{ row }">{{ row.vat_count }} 缸</template>
         </el-table-column>
         <el-table-column prop="delivery_date" label="交期" width="110" />
+        <el-table-column label="交期风险" width="100">
+          <template #default="{ row }">
+            <el-tooltip v-if="row.risk && row.risk.level !== 'ok'" placement="top">
+              <template #content>
+                <div v-for="(r, i) in row.risk.reasons" :key="i" style="max-width: 320px">{{ r }}</div>
+              </template>
+              <el-tag :type="row.risk.level === 'overdue' ? 'danger' : 'warning'" size="small">
+                {{ row.risk.level === 'overdue' ? '已拖期' : '拖期风险' }}
+              </el-tag>
+            </el-tooltip>
+            <span v-else style="color: #67c23a; font-size: 13px">正常</span>
+          </template>
+        </el-table-column>
         <el-table-column label="优先级" width="90">
           <template #default="{ row }">
             <el-tag :type="PRIORITY[row.priority]?.type" size="small">{{ row.priority_display }}</el-tag>
