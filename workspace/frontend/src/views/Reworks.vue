@@ -64,7 +64,7 @@ async function start(row) {
 }
 
 async function finish(row, result) {
-  const text = result === 'pass' ? '确认返修合格？关联异常将自动关闭。' : '确认返修不合格？异常将保持待处理，可再次发起返修。'
+  const text = result === 'pass' ? '确认返修合格？关联异常将自动关闭。' : '确认返修不合格？异常将退回「待处理」，可再次发起返修。'
   await ElMessageBox.confirm(text, '返修结案', { type: result === 'pass' ? 'success' : 'warning' })
   await api.finishRework(row.id, result)
   ElMessage.success('已结案')

@@ -29,8 +29,8 @@
               :status="row.status === 'completed' ? 'success' : ''" />
           </template>
         </el-table-column>
-        <el-table-column label="当前工序" width="110">
-          <template #default="{ row }">{{ currentStep(row) }}</template>
+        <el-table-column label="当前工序" width="130">
+          <template #default="{ row }">{{ row.current_step }}</template>
         </el-table-column>
         <el-table-column label="状态" width="90">
           <template #default="{ row }">
@@ -54,11 +54,6 @@ const filter = ref('')
 const expanded = ref([])
 
 const pct = (row) => (row.total_steps ? Math.round((row.done_steps / row.total_steps) * 100) : 0)
-
-function currentStep(row) {
-  // 列表接口只有计数，简单显示完成数
-  return `${row.done_steps}/${row.total_steps} 道`
-}
 
 async function load() {
   loading.value = true

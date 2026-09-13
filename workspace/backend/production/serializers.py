@@ -60,6 +60,7 @@ class DyeVatListSerializer(serializers.ModelSerializer):
     total_steps = serializers.SerializerMethodField()
     schedule_warnings = serializers.SerializerMethodField()
     delay_info = serializers.SerializerMethodField()
+    current_step = serializers.SerializerMethodField()
 
     class Meta:
         model = DyeVat
@@ -80,6 +81,20 @@ class DyeVatListSerializer(serializers.ModelSerializer):
     def get_delay_info(self, obj):
         # 动态计算：落后计划标记随工序推进/排缸调整自动刷新
         return vat_delay_info(obj)
+
+    def get_current_step(self, obj):
+        steps = list(obj.steps.all())
+        for s in steps:
+            if s.status == "in_progress":
+                return f"{s.get_step_display()}（进行中）"
+            if s.status == "abnormal":
+                return f"{s.get_step_display()}（异常）"
+        if steps and all(s.status == "done" for s in steps):
+            return "全部完成"
+        for s in steps:
+            if s.status == "not_started":
+                return f"待{s.get_step_display()}"
+        return "—"
 
 
 class DyeVatDetailSerializer(DyeVatListSerializer):

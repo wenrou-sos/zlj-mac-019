@@ -76,10 +76,9 @@
         <el-form-item label="机台" required>
           <el-select v-model="form.machine" style="width: 100%">
             <el-option v-for="m in machines" :key="m.id" :value="m.id"
-              :label="`${m.name}（${m.machine_type_display} ${m.capacity_kg}kg）`"
-              :disabled="current && m.capacity_kg < current.weight_kg">
+              :label="`${m.name}（${m.machine_type_display} ${m.capacity_kg}kg）`">
               <span>{{ m.name }}（{{ m.machine_type_display }} {{ m.capacity_kg }}kg）</span>
-              <span v-if="current && m.capacity_kg < current.weight_kg" style="float: right; color: #f56c6c; font-size: 12px">超容</span>
+              <span v-if="current && m.capacity_kg < current.weight_kg" style="float: right; color: #f56c6c; font-size: 12px">超容，需确认</span>
             </el-option>
           </el-select>
         </el-form-item>

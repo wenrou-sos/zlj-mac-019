@@ -210,8 +210,13 @@ class DyeVatViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=["post"])
     def schedule(self, request, pk=None):
-        """排缸：冲突硬拦截并附下一空档；超容/机型不适配需 confirm=true 人工确认"""
+        """排缸：仅待排缸/已排缸（改排）可操作；冲突硬拦截；超容/机型不适配需 confirm=true"""
         vat = self.get_object()
+        if vat.status not in ("unscheduled", "scheduled"):
+            return Response(
+                {"detail": f"缸号当前状态为「{vat.get_status_display()}」，不允许排缸"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
         parsed, err = self._parse_schedule(request)
         if err:
             return err
@@ -260,7 +265,13 @@ class DyeVatViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=["post"])
     def unschedule(self, request, pk=None):
+        """取消排缸：仅已排缸状态可取消"""
         vat = self.get_object()
+        if vat.status != "scheduled":
+            return Response(
+                {"detail": f"缸号当前状态为「{vat.get_status_display()}」，不能取消排缸"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
         vat.machine = None
         vat.planned_start = vat.planned_end = None
         vat.status = "unscheduled"
@@ -364,6 +375,10 @@ class ReworkRecordViewSet(viewsets.ModelViewSet):
         if record.result == "pass":
             issue.status = "closed"
             issue.closed_at = timezone.now()
+        else:
+            # 返修不合格：异常退回待处理，可再次发起返修
+            issue.status = "open"
+            issue.closed_at = None
         issue.save()
         return Response(ReworkRecordSerializer(record).data)
 
