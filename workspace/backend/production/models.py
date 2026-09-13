@@ -89,10 +89,77 @@ class DyeVat(models.Model):
         return self.vat_no
 
 
+# 机型-布种适配规则：(机型, 不适配的布种关键词, 原因)
+MACHINE_FABRIC_RULES = [
+    ("jigger", ["针织"], "卷染机不适合针织布（易卷边、拉伸变形）"),
+    ("airflow", ["梭织", "府绸", "塔丝隆", "斜纹"], "气流染色机不适合梭织类布种"),
+]
+
+
+def machine_suitability(machine, fabric_type):
+    """返回 (是否适配, 原因)"""
+    for mtype, keywords, reason in MACHINE_FABRIC_RULES:
+        if machine.machine_type == mtype and any(k in (fabric_type or "") for k in keywords):
+            return False, f"机型不适配：{reason}"
+    return True, ""
+
+
+def compute_schedule_warnings(vat, machine):
+    """排缸校验：超容 + 机型适配，返回警告文案列表"""
+    warnings = []
+    if machine is None:
+        return warnings
+    if vat.weight_kg > machine.capacity_kg:
+        warnings.append(f"超容：本缸 {vat.weight_kg}kg 超过机台容量 {machine.capacity_kg}kg")
+    ok, reason = machine_suitability(machine, vat.order.fabric_type)
+    if not ok:
+        warnings.append(reason)
+    return warnings
+
+
+class ProcessTemplate(models.Model):
+    """成熟工艺模板：按布种+色号（或客户确认样）沉淀的配方"""
+
+    name = models.CharField("模板名称", max_length=100, unique=True)
+    fabric_type = models.CharField("适用布种", max_length=100)
+    color_no = models.CharField("色号", max_length=50, blank=True)
+    color = models.CharField("颜色", max_length=50, blank=True)
+    customer = models.CharField("客户确认样", max_length=100, blank=True)
+    bath_ratio = models.CharField("浴比", max_length=20, default="1:10")
+    dye_temp = models.DecimalField("染色温度(℃)", max_digits=5, decimal_places=1, default=98.0)
+    dye_time = models.PositiveIntegerField("保温时间(min)", default=40)
+    ph_value = models.DecimalField("pH值", max_digits=3, decimal_places=1, default=7.0)
+    heating_rate = models.DecimalField("升温速率(℃/min)", max_digits=3, decimal_places=1, default=2.0)
+    dyes = models.JSONField("染料配方", default=list, blank=True)
+    auxiliaries = models.JSONField("助剂", default=list, blank=True)
+    note = models.TextField("工艺备注", blank=True)
+    created_at = models.DateTimeField("创建时间", auto_now_add=True)
+    updated_at = models.DateTimeField("更新时间", auto_now=True)
+
+    class Meta:
+        ordering = ["-updated_at"]
+
+    def __str__(self):
+        return self.name
+
+
+# 模板/缸号工艺参数之间需要整套拷贝的字段
+PARAM_FIELDS = ["bath_ratio", "dye_temp", "dye_time", "ph_value", "heating_rate", "dyes", "auxiliaries", "note"]
+
+
 class ProcessParameter(models.Model):
     """缸号对应的染色工艺参数"""
 
     vat = models.OneToOneField(DyeVat, verbose_name="缸号", related_name="params", on_delete=models.CASCADE)
+    template = models.ForeignKey(
+        ProcessTemplate,
+        verbose_name="执行模板",
+        related_name="vat_params",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        help_text="套用的模板（值为快照，模板后续改动不影响本缸）",
+    )
     bath_ratio = models.CharField("浴比", max_length=20, default="1:10")
     dye_temp = models.DecimalField("染色温度(℃)", max_digits=5, decimal_places=1, default=98.0)
     dye_time = models.PositiveIntegerField("保温时间(min)", default=40)

@@ -6,13 +6,16 @@ from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
 
 from .models import (
+    PARAM_FIELDS,
     DyeVat,
     Machine,
     Order,
     ProcessParameter,
     ProcessStep,
+    ProcessTemplate,
     QualityIssue,
     ReworkRecord,
+    compute_schedule_warnings,
 )
 from .serializers import (
     DyeVatDetailSerializer,
@@ -22,6 +25,7 @@ from .serializers import (
     OrderSerializer,
     ProcessParameterSerializer,
     ProcessStepSerializer,
+    ProcessTemplateSerializer,
     QualityIssueSerializer,
     ReworkRecordSerializer,
 )
@@ -65,15 +69,39 @@ class MachineViewSet(viewsets.ModelViewSet):
         return Response(data)
 
 
+class ProcessTemplateViewSet(viewsets.ModelViewSet):
+    queryset = ProcessTemplate.objects.all()
+    serializer_class = ProcessTemplateSerializer
+
+
+def _copy_params(target_params, source, template):
+    """把 source（模板或缸号参数）的整套工艺值快照到目标参数，并记录模板留痕"""
+    for f in PARAM_FIELDS:
+        setattr(target_params, f, getattr(source, f))
+    target_params.template = template
+    target_params.save()
+    return target_params
+
+
 class DyeVatViewSet(viewsets.ModelViewSet):
     queryset = DyeVat.objects.select_related("order", "machine").prefetch_related("steps").all()
 
     def perform_create(self, serializer):
-        """新建缸号时补齐默认工艺参数与 9 道标准工序"""
+        """新建缸号：补齐默认工艺参数与 9 道工序；可随单套用模板(template_id)或复制缸号(copy_from)"""
         vat = serializer.save()
-        ProcessParameter.objects.create(vat=vat)
+        params = ProcessParameter.objects.create(vat=vat)
         for i, (step, _) in enumerate(ProcessStep.STEP_CHOICES):
             ProcessStep.objects.create(vat=vat, step=step, seq=i)
+        tpl_id = self.request.data.get("template_id")
+        src_id = self.request.data.get("copy_from")
+        if tpl_id:
+            tpl = ProcessTemplate.objects.filter(pk=tpl_id).first()
+            if tpl:
+                _copy_params(params, tpl, tpl)
+        elif src_id:
+            src = DyeVat.objects.filter(pk=src_id).select_related("params").first()
+            if src and hasattr(src, "params"):
+                _copy_params(params, src.params, src.params.template)
 
     def get_serializer_class(self):
         if self.action == "retrieve":
@@ -90,36 +118,134 @@ class DyeVatViewSet(viewsets.ModelViewSet):
             qs = qs.filter(order_id=order_id)
         return qs
 
-    @action(detail=True, methods=["post"])
-    def schedule(self, request, pk=None):
-        """排缸：指定机台与计划时间，带冲突校验"""
-        vat = self.get_object()
+    # ---------- 排缸 ----------
+
+    def _parse_schedule(self, request):
+        """解析排缸请求，返回 (machine, planned_start, planned_end) 或 Response 错误"""
         machine_id = request.data.get("machine")
         planned_start = parse_datetime(str(request.data.get("planned_start") or ""))
         planned_end = parse_datetime(str(request.data.get("planned_end") or ""))
         if not machine_id or not planned_start or not planned_end:
-            return Response({"detail": "机台、计划开始/结束时间必填"}, status=status.HTTP_400_BAD_REQUEST)
+            return None, Response({"detail": "机台、计划开始/结束时间必填"}, status=status.HTTP_400_BAD_REQUEST)
         if timezone.is_naive(planned_start):
             planned_start = timezone.make_aware(planned_start)
         if timezone.is_naive(planned_end):
             planned_end = timezone.make_aware(planned_end)
         if planned_end <= planned_start:
-            return Response({"detail": "计划结束时间必须晚于开始时间"}, status=status.HTTP_400_BAD_REQUEST)
-        if not Machine.objects.filter(pk=machine_id, is_active=True).exists():
-            return Response({"detail": "机台不存在或已停用"}, status=status.HTTP_400_BAD_REQUEST)
+            return None, Response({"detail": "计划结束时间必须晚于开始时间"}, status=status.HTTP_400_BAD_REQUEST)
+        machine = Machine.objects.filter(pk=machine_id, is_active=True).first()
+        if not machine:
+            return None, Response({"detail": "机台不存在或已停用"}, status=status.HTTP_400_BAD_REQUEST)
+        return (machine, planned_start, planned_end), None
+
+    def _next_slot(self, vat, machine, duration, after):
+        """在该机台 after 之后找第一个能容纳 duration 的空档"""
+        cursor = after
+        bookings = (
+            machine.vats.filter(status__in=["scheduled", "producing"], planned_end__gt=after)
+            .exclude(pk=vat.pk)
+            .order_by("planned_start")
+        )
+        for b in bookings:
+            if b.planned_start - cursor >= duration:
+                break
+            cursor = max(cursor, b.planned_end)
+        return cursor, cursor + duration
+
+    def _schedule_info(self, vat, machine, planned_start, planned_end):
+        """汇总排缸预检结果：超容/机型警告、时段冲突与下一空档、拼缸建议"""
+        info = {
+            "warnings": compute_schedule_warnings(vat, machine),
+            "conflict": None,
+            "next_available": None,
+            "merge_suggestions": [],
+        }
         conflict = (
-            DyeVat.objects.filter(machine_id=machine_id, status__in=["scheduled", "producing"])
+            DyeVat.objects.filter(machine=machine, status__in=["scheduled", "producing"])
             .exclude(pk=vat.pk)
             .filter(planned_start__lt=planned_end, planned_end__gt=planned_start)
-            .exists()
+            .order_by("planned_start")
+            .first()
         )
         if conflict:
-            return Response({"detail": "该机台在所选时间段已有排缸计划"}, status=status.HTTP_400_BAD_REQUEST)
-        vat.machine_id = machine_id
+            info["conflict"] = (
+                f"与 {conflict.vat_no}（{timezone.localtime(conflict.planned_start):%m-%d %H:%M}"
+                f"~{timezone.localtime(conflict.planned_end):%H:%M}）时段重叠"
+            )
+            ns, ne = self._next_slot(vat, machine, planned_end - planned_start, planned_start)
+            info["next_available"] = [ns, ne]
+        # 拼缸建议：同布种同色号的待排缸，合缸不超容
+        if vat.order.color_no:
+            others = DyeVat.objects.filter(
+                status="unscheduled",
+                order__color_no=vat.order.color_no,
+                order__fabric_type=vat.order.fabric_type,
+            ).exclude(pk=vat.pk).select_related("order")
+            for o in others:
+                if vat.weight_kg + o.weight_kg <= machine.capacity_kg:
+                    info["merge_suggestions"].append(
+                        {"vat_no": o.vat_no, "order_no": o.order.order_no, "weight_kg": o.weight_kg}
+                    )
+        return info
+
+    @action(detail=True, methods=["post"])
+    def schedule_check(self, request, pk=None):
+        """排缸预检：不落库，返回警告/冲突/拼缸建议"""
+        vat = self.get_object()
+        parsed, err = self._parse_schedule(request)
+        if err:
+            return err
+        machine, planned_start, planned_end = parsed
+        return Response(self._schedule_info(vat, machine, planned_start, planned_end))
+
+    @action(detail=True, methods=["post"])
+    def schedule(self, request, pk=None):
+        """排缸：冲突硬拦截并附下一空档；超容/机型不适配需 confirm=true 人工确认"""
+        vat = self.get_object()
+        parsed, err = self._parse_schedule(request)
+        if err:
+            return err
+        machine, planned_start, planned_end = parsed
+        info = self._schedule_info(vat, machine, planned_start, planned_end)
+        if info["conflict"]:
+            return Response(
+                {"detail": info["conflict"], "next_available": info["next_available"]},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        if info["warnings"] and not request.data.get("confirm"):
+            return Response(
+                {"need_confirm": True, "warnings": info["warnings"]},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        vat.machine = machine
         vat.planned_start = planned_start
         vat.planned_end = planned_end
         vat.status = "scheduled"
         vat.save()
+        return Response(DyeVatDetailSerializer(vat).data)
+
+    # ---------- 工艺模板 ----------
+
+    @action(detail=True, methods=["post"])
+    def apply_template(self, request, pk=None):
+        """套用模板：值快照到本缸参数，记录执行模板；模板后续改动不影响本缸"""
+        vat = self.get_object()
+        tpl = ProcessTemplate.objects.filter(pk=request.data.get("template")).first()
+        if not tpl:
+            return Response({"detail": "模板不存在"}, status=status.HTTP_400_BAD_REQUEST)
+        params, _ = ProcessParameter.objects.get_or_create(vat=vat)
+        _copy_params(params, tpl, tpl)
+        return Response(DyeVatDetailSerializer(vat).data)
+
+    @action(detail=True, methods=["post"])
+    def copy_params(self, request, pk=None):
+        """从其他缸号复制整套配方（沿用其模板留痕）"""
+        vat = self.get_object()
+        src = DyeVat.objects.filter(pk=request.data.get("source")).first()
+        if not src or not hasattr(src, "params"):
+            return Response({"detail": "来源缸号不存在或无工艺参数"}, status=status.HTTP_400_BAD_REQUEST)
+        params, _ = ProcessParameter.objects.get_or_create(vat=vat)
+        _copy_params(params, src.params, src.params.template)
         return Response(DyeVatDetailSerializer(vat).data)
 
     @action(detail=True, methods=["post"])

@@ -6,9 +6,17 @@ from .models import (
     Order,
     ProcessParameter,
     ProcessStep,
+    ProcessTemplate,
     QualityIssue,
     ReworkRecord,
+    compute_schedule_warnings,
 )
+
+
+class ProcessTemplateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProcessTemplate
+        fields = "__all__"
 
 
 class MachineSerializer(serializers.ModelSerializer):
@@ -20,6 +28,8 @@ class MachineSerializer(serializers.ModelSerializer):
 
 
 class ProcessParameterSerializer(serializers.ModelSerializer):
+    template_name = serializers.CharField(source="template.name", read_only=True, default=None)
+
     class Meta:
         model = ProcessParameter
         exclude = ("vat",)
@@ -38,10 +48,13 @@ class DyeVatListSerializer(serializers.ModelSerializer):
     order_no = serializers.CharField(source="order.order_no", read_only=True)
     customer = serializers.CharField(source="order.customer", read_only=True)
     color = serializers.CharField(source="order.color", read_only=True)
+    color_no = serializers.CharField(source="order.color_no", read_only=True)
+    fabric_type = serializers.CharField(source="order.fabric_type", read_only=True)
     machine_name = serializers.CharField(source="machine.name", read_only=True, default=None)
     status_display = serializers.CharField(source="get_status_display", read_only=True)
     done_steps = serializers.SerializerMethodField()
     total_steps = serializers.SerializerMethodField()
+    schedule_warnings = serializers.SerializerMethodField()
 
     class Meta:
         model = DyeVat
@@ -52,6 +65,12 @@ class DyeVatListSerializer(serializers.ModelSerializer):
 
     def get_total_steps(self, obj):
         return obj.steps.count()
+
+    def get_schedule_warnings(self, obj):
+        # 动态计算：已排缸号后续改重量/换机台都会重新提示
+        if obj.status not in ("scheduled", "producing") or not obj.machine:
+            return []
+        return compute_schedule_warnings(obj, obj.machine)
 
 
 class DyeVatDetailSerializer(DyeVatListSerializer):

@@ -11,6 +11,7 @@ from production.models import (
     Order,
     ProcessParameter,
     ProcessStep,
+    ProcessTemplate,
     QualityIssue,
     ReworkRecord,
 )
@@ -93,6 +94,14 @@ PARAMS = {
              "auxiliaries": [{"name": "元明粉", "gpl": 80}, {"name": "纯碱", "gpl": 25}]},
 }
 
+# 成熟工艺模板：(名称, 布种, 色号, 颜色, 客户确认样) —— 参数取 PARAMS[颜色]
+TEMPLATES = [
+    ("全棉针织-藏青N-2105", "全棉针织汗布", "N-2105", "藏青", "华纺集团确认样#A-102"),
+    ("涤纶梭织-宝蓝B-3318", "涤纶梭织春亚纺", "B-3318", "宝蓝", "江南服饰确认样#B-077"),
+    ("涤棉府绸-米白W-1020", "涤棉混纺府绸", "W-1020", "米白", "粤港纺织确认样#C-210"),
+    ("全棉斜纹-卡其K-5520", "全棉斜纹布", "K-5520", "卡其", "铭远家纺确认样#D-033"),
+]
+
 ISSUES = [
     # 缸序号(全局), 类型, 严重度, 描述, 上报人, 状态, 返修(方式,方案,负责人,状态,结果)
     (2, "color_diff", "major", "对样偏红光，△E=1.8 超出客户允差1.0", "王品检", "processing",
@@ -115,6 +124,18 @@ class Command(BaseCommand):
         Machine.objects.all().delete()
 
         machines = [Machine.objects.create(name=n, machine_type=t, capacity_kg=c) for n, t, c in MACHINES]
+
+        # 工艺模板（重复执行 seed 不重复创建）
+        tpl_by_color = {}
+        for name, fabric, color_no, color, customer in TEMPLATES:
+            tpl, _ = ProcessTemplate.objects.get_or_create(
+                name=name,
+                defaults={
+                    "fabric_type": fabric, "color_no": color_no, "color": color,
+                    "customer": customer, "note": "客户确认样工艺，已量产验证", **PARAMS[color],
+                },
+            )
+            tpl_by_color[color] = tpl
 
         now = timezone.now()
         vat_seq = 0
@@ -140,7 +161,9 @@ class Command(BaseCommand):
                 all_vats.append(vat)
                 p = PARAMS.get(color)
                 if p:
-                    ProcessParameter.objects.create(vat=vat, note="按客户确认样工艺执行", **p)
+                    ProcessParameter.objects.create(
+                        vat=vat, template=tpl_by_color.get(color), note="按客户确认样工艺执行", **p
+                    )
                 for i, step in enumerate(STEPS):
                     if i < done_steps:
                         sst = "done"
